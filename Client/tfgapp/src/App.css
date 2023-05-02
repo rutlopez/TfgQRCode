@@ -416,10 +416,7 @@ nav ul li a:hover {
   margin-left: 100px;
 }
 
-#file::-webkit-file-upload-button {
-  opacity: 0;
-  pointer-events: none;
-}
+
 
 .card {
   border-radius: 10px;
@@ -428,6 +425,7 @@ nav ul li a:hover {
   word-wrap: break-word;
 
 }
+
 
 .square {
   width: 150px;

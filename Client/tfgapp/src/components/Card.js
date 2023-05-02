@@ -237,11 +237,12 @@ function Card() {
                                         name="personal-photo"
                                         accept="image/*"
                                         onChange={handlePhotoChange}
+                                        className="custom-file-input"
                                     />
                                 </div>
                             </div>
                             <div class="form-container">
-                            <h2 style={{ fontFamily: 'Poppins', fontSize: 18 }}>Social Networks</h2>
+                                <h2 style={{ fontFamily: 'Poppins', fontSize: 18 }}>Social Networks</h2>
                                 <div className="social-container">
                                     <div className="social-media-card">
                                         <div className="social-media-icon">
@@ -289,19 +290,14 @@ function Card() {
                             <div className="preview" style={{ maxHeight: '500px', overflowY: 'auto', paddingBottom: '20px' }}>
                                 <div className="card-preview">
                                     <h2 style={{ fontFamily: 'Poppins' }}>Card Preview</h2>
-                                    <div
-                                        style={{
-                                            backgroundColor: 'black',
-                                            backgroundImage: backgroundImage,
-                                            width: 400,
-                                            height: 200,
-                                            borderTopLeftRadius: 12,
-                                            borderTopRightRadius: 12,
-                                            backgroundSize: 'cover'
-                                        }}
-                                    >
-                                        <div className='circle' style={{}}>
-                                            <img className="circle-photo" alt=' ' src={photoDataURL} style={{ borderRadius: '50%', fontFamily: 'Poppins-light', marginTop: 155, marginLeft: 163, border: 'solid 5px white' }} />
+
+                                    <div style={{ backgroundColor: 'black', backgroundImage: backgroundImage, width: 400, height: 200, borderTopLeftRadius: 12, borderTopRightRadius: 12, backgroundSize: 'cover' }}>
+                                        <div className='circle'>
+                                            {photoDataURL ? (
+                                                <img className="circle-photo" alt=' ' src={photoDataURL} style={{ borderRadius: '50%', fontFamily: 'Poppins-light', marginTop: 155, marginLeft: 163, border: 'solid 5px white' }} />
+                                            ) : (
+                                                <div style={{ width: '100%', height: '100%', borderRadius: '50%' }}></div>
+                                            )}
                                         </div>
                                     </div>
                                     <div className="card" style={{ backgroundColor: backgroundColor }}>

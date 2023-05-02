@@ -6,6 +6,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './assets/fonts/Roboto/Roboto-Bold.ttf';
 import './assets/fonts/Poppins/Poppins-Bold.ttf';
+import './assets/fonts/Poppins/Poppins-Light.ttf';
+import './assets/fonts/Poppins/Poppins-Medium.ttf';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

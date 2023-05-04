@@ -285,23 +285,22 @@ function Card() {
                             </div>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-6">
+                    <div className='row'>
+                        <div className="col-12 col-md-6">
                             <div className="preview" style={{ maxHeight: '500px', overflowY: 'auto', paddingBottom: '20px' }}>
                                 <div className="card-preview">
                                     <h2 style={{ fontFamily: 'Poppins' }}>Card Preview</h2>
-
-                                    <div style={{ backgroundColor: 'black', backgroundImage: backgroundImage, width: 400, height: 200, borderTopLeftRadius: 12, borderTopRightRadius: 12, backgroundSize: 'cover' }}>
+                                    <div style={{ backgroundColor: 'black', backgroundImage: backgroundImage, height: 200, borderTopLeftRadius: 12, borderTopRightRadius: 12, backgroundSize: 'cover' }}>
                                         <div className='circle'>
                                             {photoDataURL ? (
-                                                <img className="circle-photo" alt=' ' src={photoDataURL} style={{ borderRadius: '50%', fontFamily: 'Poppins-light', marginTop: 155, marginLeft: 163, border: 'solid 5px white' }} />
+                                                <img className="circle-photo" alt=' ' src={photoDataURL} style={{ borderRadius: '50%', fontFamily: 'Poppins-light', marginTop: 155, marginLeft: 157, border: 'solid 5px white' }} />
                                             ) : (
                                                 <div style={{ width: '100%', height: '100%', borderRadius: '50%' }}></div>
                                             )}
                                         </div>
                                     </div>
-                                    <div className="card" style={{ backgroundColor: backgroundColor }}>
-                                        <div className="card-body" style={{ maxWidth: "600px" }}>
+                                    <div className="card " style={{ backgroundColor: backgroundColor }}>
+                                        <div className="card-body">
                                             <div className="row">
                                                 <div className="col">
                                                     <div className='square' style={{ width: '150px', height: '150px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginLeft: 95 }}>

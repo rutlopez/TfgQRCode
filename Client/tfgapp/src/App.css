@@ -226,13 +226,17 @@ nav ul li a:hover {
   opacity: 1;
 }
 
-.container-card{
+.container-card {
   margin-top: 150px;
+ 
 }
-
+.form{
+  padding-right: 100px;
+}
 .form-section {
   background-color: #fafafa;
-  padding: 110px 0;
+  padding: 80px 0;
+ 
 }
 
 .form-container {
@@ -241,9 +245,10 @@ nav ul li a:hover {
   border-radius: 4px;
   margin-bottom: 20px;
   margin-top: 30px;
-  margin-left: 20px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 20px;
-  width: 800px;
+  max-width: 800px;
 }
 
 .form-row {
@@ -264,7 +269,6 @@ nav ul li a:hover {
 .form-group label {
   margin-bottom: 0.5rem;
   font-family: 'Poppins-medium';
-
 }
 
 .form-group input[type="text"],
@@ -310,10 +314,18 @@ nav ul li a:hover {
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
+@media only screen and (max-width: 768px) {
+  .form-group {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+
 .photos2 {
   margin-bottom: 4rem;
   margin-top: 2rem;
-  
+
 }
 
 
@@ -327,6 +339,7 @@ nav ul li a:hover {
   margin-bottom: 4rem;
   margin-top: 2rem;
 }
+
 .custom-file-upload {
   display: inline-block;
   background-color: #d5d0d0;
@@ -338,13 +351,14 @@ nav ul li a:hover {
 }
 
 .custom-file-upload:hover {
-  background-color:#fecc00 ;
+  background-color: #fecc00;
 }
 
 .custom-file-upload span {
   font-family: 'Poppins-light';
   margin-left: 10px;
 }
+
 .social-container {
   display: flex;
   flex-wrap: wrap;
@@ -404,19 +418,17 @@ nav ul li a:hover {
   }
 }
 
-
 .row {
   display: flex;
-}
-
-.preview {
-  flex: 1;
-  padding-left: 20px;
-  max-width: 500px;
-  margin-left: 100px;
+  flex-wrap: wrap;
 }
 
 
+@media only screen and (max-width: 500px) {
+  .preview {
+    width: 100%;
+  }
+}
 
 .card {
   border-radius: 10px;
@@ -445,6 +457,7 @@ nav ul li a:hover {
   object-fit: cover;
 }
 
+
 .card-preview {
   background-color: #f8f8f8;
   padding: 20px;
@@ -457,6 +470,7 @@ nav ul li a:hover {
   padding: 2rem;
   word-break: break-all;
 }
+
 .card-title {
   margin-bottom: 0.5rem;
   font-size: 2rem;
@@ -471,7 +485,7 @@ nav ul li a:hover {
 
 .card-text {
   margin-bottom: 0.25rem;
-  font-family: 'Poppins-light'; 
+  font-family: 'Poppins-light';
 }
 
 .qr-code {

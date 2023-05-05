@@ -279,6 +279,15 @@ nav ul li a:hover {
   .features-content {
     flex-direction: column;
   }
+  .features-left{
+    flex-direction: column;
+    margin-left: -180px;
+  }
+  .features-right{
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: 90px;
+  }
 }
 
 .title {

@@ -9,8 +9,8 @@ function Footer() {
         </div>
         <div>
           <ul style={{ listStyle: 'none', display: 'flex', margin: 0, padding: 0 }}>
-            <li style={{ marginRight: 10 }}><a href="#" style={{ color: '#fff' }}>Privacy Policy</a></li>
-            <li><a href="#" style={{ color: '#fff' }}>Terms of Service</a></li>
+            <li style={{ marginRight: 10 }}><a href="/" style={{ color: '#fff' }}>Privacy Policy</a></li>
+            <li><a href="/" style={{ color: '#fff' }}>Terms of Service</a></li>
           </ul>
         </div>
       </div>

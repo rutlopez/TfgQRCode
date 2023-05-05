@@ -279,14 +279,22 @@ nav ul li a:hover {
   .features-content {
     flex-direction: column;
   }
-  .features-left{
-    flex-direction: column;
-    margin-left: -180px;
+
+  .title p {
+    padding-right: 200px;
+    padding-left: 50px;
   }
-  .features-right{
+
+  .features-left {
+    flex-direction: column;
+    margin-left: -200px;
+    margin-top: 50px;
+  }
+
+  .features-right {
     flex-direction: column;
     margin-top: 50px;
-    margin-left: 90px;
+    margin-left: 100px;
   }
 }
 
@@ -340,9 +348,10 @@ nav ul li a:hover {
   line-height: 1.4;
   color: black;
 }
+
 .feature-text p {
   font-size: 14px;
-  color:#555;
+  color: #555;
   font-family: 'Poppins-light';
   line-height: 1.4;
 

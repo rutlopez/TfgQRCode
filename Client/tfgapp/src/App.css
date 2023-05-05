@@ -16,6 +16,8 @@ img {
 nav ul {
   list-style: none;
   display: flex;
+
+
 }
 
 nav ul li:not(:last-child) {
@@ -31,9 +33,69 @@ nav ul li a {
   transition: color 0.2s ease-in-out;
 }
 
+nav a {
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  -ms-transiton: 0.3s ease-in-out
+}
+
+nav a::after {
+  display: block;
+  content: "";
+  width: 0;
+  height: 3px;
+  margin: 0 auto;
+  margin-left: 37px;
+  background-color: #fecc00;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  -ms-transiton: 0.3s ease-in-out
+}
+
+/* nav li:nth-of-type(5) a::after {
+  all: unset;
+} */
+
+nav a:hover::after {
+  width: 30px;
+}
+
+nav li:nth-of-type(5) a {
+  padding: 0.5em 1em;
+  background: #cbcbcb;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  -ms-transiton: 0.3s ease-in-out
+}
+
+nav li:nth-of-type(5) a:hover {
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
 nav ul li a:hover {
   color: #fecc00;
 }
+
+/* End of navbar styles */
 
 .hero {
   background: #f8f8f8;
@@ -134,109 +196,165 @@ nav ul li a:hover {
   max-height: 600px;
 }
 
-
-.features {
-  background-color: #f8f8f8;
-  padding-bottom: 120px;
-}
-
-.features .heading>h1 {
-  font-size: 36px;
-  font-weight: bold;
-  color: black;
-  padding-left: 40px;
-}
-
-.content-grids {
-  padding-left: 25px;
-  padding-right: 25px;
-  margin-bottom: 130px;
-  margin-top: -70px;
-}
-
-.btn_shadow {
-  padding: 20px 25px;
-  border-radius: 6px;
-  transition: 0.3s all ease;
-  cursor: pointer;
-  color: #000;
-  transition: 0.5s;
-}
-
-.box {
-  padding: 50px;
+.floating-icon {
+  background-color: #fecc00;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  position: absolute;
+  left: 45%;
+  margin-top: 3rem;
+  transform: translateX(-50%);
+  cursor: pointer;
 }
 
-.box h2 {
-  margin: 20px 0 20px 0;
+.floating-icon a {
+  border: 1px solid #fff;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.btn_shadow {
-  background: linear-gradient(145deg, #e2e8ec, #ffffff);
-  box-shadow: 4px 4px 8px #cbcbcb, -4px -4px 8px #ffffff;
+.mouse {
+  transform: translateY(-25%);
+  animation: bounce .8s ease infinite alternate;
 }
 
-.btn_shadow:hover {
-  background: #fecc00;
-  color: white;
-  transform: translateY(-10px);
+@keyframes bounce {
+  0% {
+    transform: translateY(-25%);
+  }
+
+  100% {
+    transform: translateY(25%);
+  }
 }
 
-.box_shadow {
-  background: linear-gradient(145deg, #e2e8ec, #ffffff);
-  box-shadow: 4px 4px 8px #cbcbcb, -4px -4px 8px #ffffff;
-  border-radius: 10px;
+/* End of hero section styles*/
+
+.features {
+  margin-top: 5rem;
+  padding-top: 20px;
+  padding-bottom: 80px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 18rem);
-  grid-gap: 35px;
+.features-content {
+  display: flex;
   justify-content: center;
 }
 
-.features .box {
-  padding: 50px;
+.features-left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 500px;
+  width: 900px;
+}
+
+.features-left img {
+  margin-top: -65px;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  max-height: 700px;
+  max-width: 700px;
+}
+
+.features-right {
+  flex: 1;
+  padding-right: 150px;
+}
+
+@media screen and (max-width:600px) {
+  .features-content {
+    flex-direction: column;
+  }
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  font-family: 'Poppins';
+  line-height: 1.4;
+  color: #fecc00;
+  margin: 1.5rem 0;
+}
+
+.title p {
+  width: 50%;
+  min-width: 40rem;
+  margin: 0 auto;
+  font-family: 'Poppins-light';
+
+}
+
+/* End of features styles*/
+
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+
+}
+
+.feature-icon {
+  position: relative;
+  margin-right: 2rem;
+}
+
+.inner-icon {
+  position: absolute;
+  top: 28%;
+  left: 30%;
+  transform: translateX(-50%, -50%);
+}
+
+.feature-text h3 {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.4;
+  color: black;
+}
+.feature-text p {
+  font-size: 14px;
+  color:#555;
+  font-family: 'Poppins-light';
+  line-height: 1.4;
+
 }
 
 
-.features .box p {
-  word-spacing: 2px;
-  transition: 0.5s;
-}
-
-.features .box i {
-  font-size: 30px;
-  margin-top: 20px;
-  transition: 0.5s;
-  opacity: 0;
-}
-
-.features .box:hover p {
-  color: white;
-}
-
-.features .box:hover i {
-  color: white;
-  opacity: 1;
-}
+/* End of feature section styles */
 
 .container-card {
   margin-top: 150px;
- 
+
 }
-.form{
+
+.form {
   padding-right: 100px;
 }
+
 .form-section {
   background-color: #fafafa;
   padding: 80px 0;
- 
+
 }
 
 .form-container {
@@ -245,7 +363,7 @@ nav ul li a:hover {
   border-radius: 4px;
   margin-bottom: 20px;
   margin-top: 30px;
-  margin-left: auto;
+  margin-left: 20px;
   margin-right: auto;
   padding: 20px;
   max-width: 800px;
@@ -319,8 +437,13 @@ nav ul li a:hover {
     flex: 0 0 100%;
     max-width: 100%;
   }
+
+  .form {
+    margin-left: 20%;
+  }
 }
 
+/* End of form section styles*/
 
 .photos2 {
   margin-bottom: 4rem;
@@ -328,6 +451,12 @@ nav ul li a:hover {
 
 }
 
+@media screen and (max-width: 500px) {
+  .container-design {
+    max-width: 458px;
+
+  }
+}
 
 .selected-image {
   width: 200px;
@@ -358,6 +487,8 @@ nav ul li a:hover {
   font-family: 'Poppins-light';
   margin-left: 10px;
 }
+
+/* End of background card images styles*/
 
 .social-container {
   display: flex;
@@ -418,6 +549,8 @@ nav ul li a:hover {
   }
 }
 
+/* End of social networks section styles*/
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -428,6 +561,7 @@ nav ul li a:hover {
   .preview {
     width: 100%;
   }
+
 }
 
 .card {
@@ -496,3 +630,5 @@ nav ul li a:hover {
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
+
+/* End of preview card styles */

@@ -114,7 +114,7 @@ function Card() {
                 <div className="row">
                     <div className="col-6">
                         <div className="form">
-                            <h2 style={{ fontFamily: 'Poppins', marginLeft: 20 }}>Create your CV card</h2>
+                            <h2 style={{ fontFamily: 'Poppins', marginLeft: 20}}>Create your CV card</h2>
                             <div class="form-container">
                                 <h2 style={{ marginBottom: 10, fontSize: 18 }}>General information</h2>
                                 <form>
@@ -158,7 +158,9 @@ function Card() {
                                     </div>
                                 </form>
                             </div>
-                            <div class="form-container">
+                        </div>
+                        <div class="form-container">
+                            <div className='container-design'>
                                 <h2 style={{ fontFamily: 'Poppins', fontSize: 18 }}>Design and customize</h2>
                                 <div className="row">
                                     <div className='col-9' >
@@ -241,55 +243,54 @@ function Card() {
                                     />
                                 </div>
                             </div>
-                            <div class="form-container">
-                                <h2 style={{ fontFamily: 'Poppins', fontSize: 18 }}>Social Networks</h2>
-                                <div className="social-container">
-                                    <div className="social-media-card">
-                                        <div className="social-media-icon">
-                                            <FaFacebook />
-                                        </div>
-                                        <div className="social-media-info">
-                                            <h3 className="social-media-name">Facebook</h3>
-                                            <input type='text' name="facebook" id="facebook" onChange={handleChange} value={formData.facebook} className="social-media-handle" placeholder="Username" />
-                                        </div>
+                        </div>
+                        <div class="form-container">
+                            <h2 style={{ fontFamily: 'Poppins', fontSize: 18 }}>Social Networks</h2>
+                            <div className="social-container">
+                                <div className="social-media-card">
+                                    <div className="social-media-icon">
+                                        <FaFacebook />
                                     </div>
-                                    <div className="social-media-card">
-                                        <div className="social-media-icon">
-                                            <FaInstagram />
-                                        </div>
-                                        <div className="social-media-info">
-                                            <h3 className="social-media-name">Instagram</h3>
-                                            <input type='text' name="instagram" id="instagram" onChange={handleChange} value={formData.instagram} className="social-media-handle" placeholder="Username" />
-                                        </div>
-                                    </div>
-                                    <div className="social-media-card">
-                                        <div className="social-media-icon">
-                                            <FaLinkedin />
-                                        </div>
-                                        <div className="social-media-info">
-                                            <h3 className="social-media-name">LinkedIn</h3>
-                                            <input type='text' name="linkedin" id="linkedin" onChange={handleChange} value={formData.linkedin} className="social-media-handle" placeholder="Username" />
-                                        </div>
-                                    </div>
-                                    <div className="social-media-card">
-                                        <div className="social-media-icon">
-                                            <FaTwitter />
-                                        </div>
-                                        <div className="social-media-info">
-                                            <h3 className="social-media-name">Twitter</h3>
-                                            <input type='text' name="twitter" id="twitter" onChange={handleChange} value={formData.twitter} className="social-media-handle" placeholder="Username" />
-                                        </div>
+                                    <div className="social-media-info">
+                                        <h3 className="social-media-name">Facebook</h3>
+                                        <input type='text' name="facebook" id="facebook" onChange={handleChange} value={formData.facebook} className="social-media-handle" placeholder="Username" />
                                     </div>
                                 </div>
-
+                                <div className="social-media-card">
+                                    <div className="social-media-icon">
+                                        <FaInstagram />
+                                    </div>
+                                    <div className="social-media-info">
+                                        <h3 className="social-media-name">Instagram</h3>
+                                        <input type='text' name="instagram" id="instagram" onChange={handleChange} value={formData.instagram} className="social-media-handle" placeholder="Username" />
+                                    </div>
+                                </div>
+                                <div className="social-media-card">
+                                    <div className="social-media-icon">
+                                        <FaLinkedin />
+                                    </div>
+                                    <div className="social-media-info">
+                                        <h3 className="social-media-name">LinkedIn</h3>
+                                        <input type='text' name="linkedin" id="linkedin" onChange={handleChange} value={formData.linkedin} className="social-media-handle" placeholder="Username" />
+                                    </div>
+                                </div>
+                                <div className="social-media-card">
+                                    <div className="social-media-icon">
+                                        <FaTwitter />
+                                    </div>
+                                    <div className="social-media-info">
+                                        <h3 className="social-media-name">Twitter</h3>
+                                        <input type='text' name="twitter" id="twitter" onChange={handleChange} value={formData.twitter} className="social-media-handle" placeholder="Username" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div className='row'>
                         <div className="col-12 col-md-6">
-                            <div className="preview" style={{ maxHeight: '500px', overflowY: 'auto', paddingBottom: '20px' }}>
+                            <div className="preview" style={{ maxHeight: '500px', overflowY: 'auto', marginBottom: '30px',marginTop:-10 }}>
                                 <div className="card-preview">
-                                    <h2 style={{ fontFamily: 'Poppins' }}>Card Preview</h2>
+                                    <h2 style={{ fontFamily: 'Poppins', marginTop:-7.5,marginBottom:22 }}>Card Preview</h2>
                                     <div style={{ backgroundColor: 'black', backgroundImage: backgroundImage, height: 200, borderTopLeftRadius: 12, borderTopRightRadius: 12, backgroundSize: 'cover' }}>
                                         <div className='circle'>
                                             {photoDataURL ? (

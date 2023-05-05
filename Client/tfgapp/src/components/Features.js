@@ -1,27 +1,34 @@
 import React from 'react'
-import { FaThumbsUp, FaCogs, FaBriefcase } from 'react-icons/fa';
+import { BsFillBookmarkStarFill } from 'react-icons/bs';
+import Feature from './Feature';
+import { featureList } from './data';
+import featureImg from '../assets/img/features/moviles.png'
 
 function Features() {
     return (
         <section className='features' id='features'>
-            <div className='container'>
-                <div className='heading'>
-                    <h1 style={{ paddingTop: 200, paddingBottom: 100 }}>Features</h1>
+            <div className='container features'>
+                <div className='title'>
+                    <BsFillBookmarkStarFill color='#fecc00' size={30}></BsFillBookmarkStarFill>
+                    <h2>Our Features</h2>
+                    <p>Create professional-looking business cards with ease and convenience.
+                        Our app features a user-friendly interface that allows you to
+                        customize your business card according to your preferences.
+                        With our built-in QR code generator, you can easily add a QR code
+                        to your card that links to your contact details or website. Say
+                        goodbye to traditional paper business cards and hello to digital
+                        innovation!</p>
                 </div>
-                <div className='content-grids' >
-                    <div className='content grid' >
-                        <div className='box btn_shadow' >
-                            <FaThumbsUp size={20} />
-                            <h2>Easy to use</h2>
-                        </div>
-                        <div className='box btn_shadow'>
-                            <FaCogs size={20} />
-                            <h2>Customizable</h2>
-                        </div>
-                        <div className='box btn_shadow'>
-                            <FaBriefcase size={20} />
-                            <h2>Professional</h2>
-                        </div>
+                <div className='features-content'>
+                    <div className='features-left'>
+                        <img src={featureImg} alt='phone-features'></img>
+                    </div>
+                    <div className='features-right'>
+                        {
+                            featureList.map((feature) => (
+                                <Feature key={feature.id} icon={feature.icon} heading={feature.heading} text={feature.text} />))
+                        }
+
                     </div>
                 </div>
             </div>

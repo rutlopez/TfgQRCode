@@ -241,6 +241,18 @@ nav ul li a:hover {
 
 /* End of hero section styles*/
 
+
+.titulo-page{
+  width: 52vw;
+}
+@media screen and (max-width:600px) {
+  .titulo-page {
+    width: 85vw;
+  }
+}
+
+
+
 .features {
   margin-top: 5rem;
   padding-top: 20px;
@@ -357,12 +369,10 @@ nav ul li a:hover {
 
 }
 
-
 /* End of feature section styles */
 
 .container-card {
   margin-top: 150px;
-
 }
 
 .form {
@@ -370,17 +380,17 @@ nav ul li a:hover {
 }
 
 .form-section {
-  background-color: #fafafa;
+  background-color: #fecc00;
   padding: 80px 0;
-
 }
+
 
 .form-container {
   background-color: #fff;
   border: 1px solid #e5e5e5;
   border-radius: 4px;
   margin-bottom: 20px;
-  margin-top: 30px;
+
   margin-left: 20px;
   margin-right: auto;
   padding: 20px;
@@ -425,41 +435,114 @@ nav ul li a:hover {
 .form-group input[type="tel"]:focus,
 .form-group input[type="url"]:focus,
 .form-group textarea:focus {
-  border-color: #80bdff;
+  border-color: #fecc00;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(254, 204, 0, 0.25);
 }
 
-.form-group input[type="submit"] {
-  background-color: #007bff;
-  border-color: #007bff;
-  color: #fff;
-  padding: 0.375rem 0.75rem;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
 
-.form-group input[type="submit"]:hover {
-  background-color: #0069d9;
-  border-color: #0062cc;
-}
-
-.form-group input[type="submit"]:focus {
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .form-group {
     flex: 0 0 100%;
     max-width: 100%;
   }
 
-  .form {
-    margin-left: 20%;
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group input[type="url"],
+  .form-group textarea {
+    font-size: 16px;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .form {
+    padding-right: 3%;
+  }
+
+  .form-container {
+    margin-right: 10px;
+  }
+
+  .form-toggle {
+    max-width: 425px;
+    width: auto;
+    margin-left: -60px;
+  }
+
+  .form-toggle-text {
+    font-size: 18px;
+  }
+
+  .form-toggle-button {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    margin-left: 5px;
+  }
+
+  .form-group {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group input[type="url"],
+  .form-group textarea {
+    font-size: 14px;
+  }
+}
+
+.form-toggle {
+  display: flex;
+  width: 800px;
+  margin: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #fff;
+  border: 2px solid #fecc00;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.form-toggle:hover {
+  background-color: #fecc00;
+  color: #fff;
+}
+
+.form-toggle-text {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.form-toggle-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: 2px solid #fecc00;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #fecc00;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-toggle-button:hover {
+  background-color: #fecc00;
+  color: #fecc00;
+  transform: scale(1.1);
+}
+
 
 /* End of form section styles*/
 
@@ -469,12 +552,65 @@ nav ul li a:hover {
 
 }
 
-@media screen and (max-width: 500px) {
-  .container-design {
-    max-width: 458px;
+@media screen and (max-width: 768px) {
+  .form-container {
+    width: 80%;
+    margin: 0 auto;
+  }
 
+  .row {
+    flex-wrap: wrap;
+  }
+
+  .col-md-6 {
+    width: 100%;
+    margin: 0;
+  }
+
+  .photos2 {
+    margin-top: 2rem;
+    max-width: 200px;
+  }
+
+  .borderbox {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .qr_bg_wrapper li {
+    width: 23%;
+  }
+
+  .square {
+    width: 60px;
+    height: 60px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    background-size: cover;
+  }
+
+  .container-design {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .selected-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+  }
+
+  .colors {
+    margin-top: 2rem;
+    width: 200px;
+  }
+
+  .photos {
+    margin-top: 2rem;
+    width: 200px;
   }
 }
+
 
 .selected-image {
   width: 200px;
@@ -488,23 +624,33 @@ nav ul li a:hover {
 }
 
 .custom-file-upload {
-  display: inline-block;
-  background-color: #d5d0d0;
-  color: white;
+  background-color: #e6e6e6;
+  color: #333333;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  transition: all 0.3s ease;
   cursor: pointer;
-  padding: 10px 20px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .custom-file-upload:hover {
-  background-color: #fecc00;
+  background-color: #333333;
+  color: #ffffff;
 }
 
-.custom-file-upload span {
-  font-family: 'Poppins-light';
-  margin-left: 10px;
+.custom-file-upload input[type=file] {
+  display: none;
 }
+
+.custom-file-upload span:hover .cloud-icon {
+  transform: translateY(-5px) rotate(20deg);
+  transition: transform 0.2s ease-in-out;
+}
+
 
 /* End of background card images styles*/
 
@@ -561,9 +707,16 @@ nav ul li a:hover {
   font-family: 'Poppins-light';
 }
 
-@media screen and (max-width: 500px) {
+input[type="text"]:focus {
+  border-color: #fecc00;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(254, 204, 0, 0.25);
+}
+
+@media screen and (max-width: 600px) {
   .social-media-card {
     margin: 10px 0;
+    margin-bottom: 50px;
   }
 }
 
@@ -575,10 +728,13 @@ nav ul li a:hover {
 }
 
 
-@media only screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
   .preview {
     width: 100%;
+    margin-top: 50px;
+    margin-left: 10px;
   }
+
 
 }
 
@@ -586,10 +742,10 @@ nav ul li a:hover {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 400px;
+  margin-right: -10px;
   word-wrap: break-word;
 
 }
-
 
 .square {
   width: 150px;
@@ -609,7 +765,6 @@ nav ul li a:hover {
   object-fit: cover;
 }
 
-
 .card-preview {
   background-color: #f8f8f8;
   padding: 20px;
@@ -621,6 +776,7 @@ nav ul li a:hover {
 .card-body {
   padding: 2rem;
   word-break: break-all;
+  padding-right: -20px;
 }
 
 .card-title {

@@ -190,17 +190,16 @@ function Card() {
         <div>
             <Header></Header>
             <div className='container-card'>
-                <div style={{ marginLeft: 20, marginBottom: '1rem', position: 'relative' }}>
-                    <h2 style={{ fontFamily: 'Poppins', fontWeight: 500, fontSize: '2rem', letterSpacing: '0.5px' }}>
-                        Create your business card
-                    </h2>
-                    <hr className='titulo-page' style={{ border: 'none', backgroundColor: '#FFC300', height: '2px', borderRadius: '2px', margin: 0, position: 'absolute', bottom: '-10px', left: 0, }} />
+                <div style={{ marginLeft: 20, marginBottom: '1rem', display:'flex', marginBottom:40}}>
+                    <h2 style={{position:'absolute' ,fontFamily:'Poppins', fontSize:35}} className='border' >Create your business card</h2>
+                    <h2 style={{position:'absolute',fontFamily:'Poppins', fontSize:35}} className='wave' >Create your business card</h2>
+                    <hr className='titulo-page' style={{ border: 'none', backgroundColor: '#FFC300', height: '2px', borderRadius: '2px', marginTop: 60,marginBottom:-20, left: 0, }} />
                 </div>
                 <div className="row">
                     <div className="col-6">
                         <div className="form">
-                            <div class="form-toggle" onClick={toggleForm}>
-                                <h2 class="form-toggle-text">General information</h2>
+                            <div className="form-toggle" onClick={toggleForm}>
+                                <h2 className="form-toggle-text">General information</h2>
                                 <button class="form-toggle-button" style={{ background: 'white' }}>{showForm ? <FaMinus /> : <FaPlus />}</button>
                             </div>
                             {showForm && (
@@ -362,45 +361,27 @@ function Card() {
                             <button class="form-toggle-button" style={{ background: 'white' }}>{showSocialNetwork ? <FaMinus /> : <FaPlus />}</button>
                         </div>
                         {showSocialNetwork && (
-                            <div className="form-container">
+                            <div class="form-container">
                                 <div className="social-container">
-                                    <div className="social-media-card" style={{ width: '100%' }}>
+                                    <div className="social-media-card">
                                         <div className="social-media-icon">
                                             <FaFacebook />
                                         </div>
                                         <div className="social-media-info">
                                             <h3 className="social-media-name">Facebook</h3>
-                                            <input
-                                                type='text'
-                                                name="facebook"
-                                                id="facebook"
-                                                onChange={handleChange}
-                                                value={formData.facebook}
-                                                className="social-media-handle"
-                                                placeholder="Username"
-                                                style={{ width: '100%' }}
-                                            />
+                                            <input type='text' name="facebook" id="facebook" onChange={handleChange} value={formData.facebook} className="social-media-handle" placeholder="Username" />
                                         </div>
                                     </div>
-                                    <div className="social-media-card" style={{ width: '100%' }}>
+                                    <div className="social-media-card">
                                         <div className="social-media-icon">
                                             <FaInstagram />
                                         </div>
                                         <div className="social-media-info">
                                             <h3 className="social-media-name">Instagram</h3>
-                                            <input
-                                                type='text'
-                                                name="instagram"
-                                                id="instagram"
-                                                onChange={handleChange}
-                                                value={formData.instagram}
-                                                className="social-media-handle"
-                                                placeholder="Username"
-                                                style={{ width: '100%' }}
-                                            />
+                                            <input type='text' name="instagram" id="instagram" onChange={handleChange} value={formData.instagram} className="social-media-handle" placeholder="Username" />
                                         </div>
                                     </div>
-                                    <div className="social-media-card" style={{ width: '100%' }}>
+                                    <div className="social-media-card">
                                         <div className="social-media-icon">
                                             <FaLinkedin />
                                         </div>
@@ -409,7 +390,7 @@ function Card() {
                                             <input type='text' name="linkedin" id="linkedin" onChange={handleChange} value={formData.linkedin} className="social-media-handle" placeholder="Username" />
                                         </div>
                                     </div>
-                                    <div className="social-media-card" style={{ width: '100%' }}>
+                                    <div className="social-media-card">
                                         <div className="social-media-icon">
                                             <FaTwitter />
                                         </div>

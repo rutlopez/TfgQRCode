@@ -242,15 +242,57 @@ nav ul li a:hover {
 /* End of hero section styles*/
 
 
-.titulo-page{
+.titulo-page {
   width: 52vw;
 }
+
 @media screen and (max-width:600px) {
   .titulo-page {
     width: 85vw;
   }
 }
 
+.border {
+  color: #dbd6d6;
+  text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
+}
+
+.wave {
+  color: #fecc00;
+  animation: wave 3s ease-in-out infinite;
+}
+
+@keyframes wave {
+
+  0%,
+  100% {
+    clip-path: polygon(0% 47%,
+        10% 48%,
+        33% 54%,
+        54% 60%,
+        70% 61%,
+        84% 59%,
+        100% 52%,
+        100% 100%,
+        0% 100%);
+  }
+
+  50% {
+    clip-path: polygon(0% 60%,
+        15% 65%,
+        34% 66%,
+        51% 62%,
+        67% 50%,
+        84% 45%,
+        100% 46%,
+        100% 100%,
+        0% 100%);
+  }
+}
 
 
 .features {
@@ -375,9 +417,7 @@ nav ul li a:hover {
   margin-top: 150px;
 }
 
-.form {
-  padding-right: 100px;
-}
+
 
 .form-section {
   background-color: #fecc00;
@@ -456,17 +496,15 @@ nav ul li a:hover {
   }
 }
 
-@media screen and (max-width: 576px) {
-  .form {
-    padding-right: 3%;
-  }
+@media screen and (max-width: 800px) {
 
   .form-container {
     margin-right: 10px;
   }
 
+
   .form-toggle {
-    max-width: 425px;
+    max-width: 725px;
     width: auto;
     margin-left: -60px;
   }
@@ -487,13 +525,68 @@ nav ul li a:hover {
     max-width: 100%;
   }
 
-
   .form-group input[type="text"],
   .form-group input[type="email"],
   .form-group input[type="tel"],
   .form-group input[type="url"],
   .form-group textarea {
     font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 750px) {
+
+  .form-container {
+    margin-right: 10px;
+  }
+
+  .titulo-page {
+    width: 90vw;
+  }
+
+  .form-toggle {
+    max-width: 625px;
+    width: auto;
+    margin-left: -60px;
+  }
+
+  .form-toggle-text {
+    font-size: 18px;
+  }
+
+  .form-toggle-button {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    margin-left: 5px;
+  }
+}
+
+@media screen and (min-width: 290px)and (max-width: 550px) {
+
+  .form-container {
+    margin-right: 10px;
+  }
+
+  .titulo-page {
+    width: 85vw;
+  }
+
+  .form-toggle {
+    max-width: 425px;
+    width: auto;
+    margin-left: -60px;
+  }
+
+  .form-toggle-text {
+    font-size: 18px;
+  }
+
+  .form-toggle-button {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    margin-left: 5px;
   }
 }
 
@@ -669,6 +762,8 @@ nav ul li a:hover {
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   transition: box-shadow 0.3s ease-in-out;
+  flex: 1 1 250px;
+  max-width: 300px;
 }
 
 .social-media-card:hover {
@@ -713,12 +808,14 @@ input[type="text"]:focus {
   box-shadow: 0 0 0 0.2rem rgba(254, 204, 0, 0.25);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .social-media-card {
-    margin: 10px 0;
     margin-bottom: 50px;
+    max-width: none;
+    flex-basis: 100%;
   }
 }
+
 
 /* End of social networks section styles*/
 

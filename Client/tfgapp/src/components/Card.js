@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import QRCode from "react-qr-code";
 import Footer from './Footer';
 import { SketchPicker } from 'react-color'
@@ -13,6 +13,8 @@ import square6 from '../assets/img/squaresCardPhotos/foto6.jpg'
 import square7 from '../assets/img/squaresCardPhotos/foto7.jpg'
 import square8 from '../assets/img/squaresCardPhotos/foto8.jpg'
 import square9 from '../assets/img/squaresCardPhotos/foto9.jpg'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 /**
  * Inicializamos los datos del form
@@ -186,24 +188,32 @@ function Card() {
         setShowSocialNetwork(!showSocialNetwork);
     };
 
+    useEffect(() =>{
+        AOS.init({
+            duration:2000,
+            once: true
+        });
+    }, [])
+
     return (
         <div>
             <Header></Header>
             <div className='container-card'>
-                <div style={{ marginLeft: 20, marginBottom: '1rem', display:'flex', marginBottom:40}}>
-                    <h2 style={{position:'absolute' ,fontFamily:'Poppins', fontSize:35}} className='border' >Create your business card</h2>
-                    <h2 style={{position:'absolute',fontFamily:'Poppins', fontSize:35}} className='wave' >Create your business card</h2>
-                    <hr className='titulo-page' style={{ border: 'none', backgroundColor: '#FFC300', height: '2px', borderRadius: '2px', marginTop: 60,marginBottom:-20, left: 0, }} />
+                <div style={{ marginLeft: 20, marginBottom: '1rem', position: 'relative' }}>
+                    <h2 style={{ fontFamily: 'Poppins', fontWeight: 500, fontSize: '2rem', letterSpacing: '0.5px' }}>
+                        Create your business card
+                    </h2>
+                    <hr className='titulo-page' style={{ border: 'none', backgroundColor: '#FFC300', height: '2px', borderRadius: '2px', margin: 0, position: 'absolute', bottom: '-10px', left: 0,}} />
                 </div>
                 <div className="row">
                     <div className="col-6">
                         <div className="form">
-                            <div className="form-toggle" onClick={toggleForm}>
-                                <h2 className="form-toggle-text">General information</h2>
+                            <div class="form-toggle" data-aos="fade-right" onClick={toggleForm}>
+                                <h2  class="form-toggle-text" data-aos="fade-right">General information </h2>
                                 <button class="form-toggle-button" style={{ background: 'white' }}>{showForm ? <FaMinus /> : <FaPlus />}</button>
                             </div>
                             {showForm && (
-                                <div class="form-container">
+                                <div class="form-container" data-aos="fade-right">
                                     <form>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
@@ -247,8 +257,8 @@ function Card() {
                                 </div>
                             )}
                         </div>
-                        <div class="form-toggle" onClick={toggleDesign}>
-                            <h2 class="form-toggle-text">Design and customize</h2>
+                        <div class="form-toggle" data-aos="fade-right" onClick={toggleDesign}>
+                            <h2 class="form-toggle-text" data-aos="fade-right">Design and customize</h2>
                             <button class="form-toggle-button" style={{ background: 'white' }}>{showDesign ? <FaMinus /> : <FaPlus />}</button>
                         </div>
                         {showDesign && (
@@ -356,8 +366,8 @@ function Card() {
                                 </div>
                             </div>
                         )}
-                        <div class="form-toggle" onClick={toggleSocialNetwork}>
-                            <h2 class="form-toggle-text">Social Networks</h2>
+                        <div class="form-toggle" data-aos="fade-right" onClick={toggleSocialNetwork}>
+                            <h2 class="form-toggle-text" data-aos="fade-right" >Social Networks</h2>
                             <button class="form-toggle-button" style={{ background: 'white' }}>{showSocialNetwork ? <FaMinus /> : <FaPlus />}</button>
                         </div>
                         {showSocialNetwork && (
@@ -405,10 +415,10 @@ function Card() {
                     </div>
                     <div className='row'>
                         <div className="col-12 col-md-6">
-                            <div className="preview" style={{ maxHeight: '500px', overflowY: 'auto', marginBottom: '30px' }}>
+                            <div className="preview" style={{ maxHeight: '600px', overflowY: 'auto', marginBottom: '30px' }}>
                                 <div className="card-preview">
                                     <h2 style={{ fontFamily: 'Poppins', marginTop: -7.5, marginBottom: 22 }}>Card Preview</h2>
-                                    <div className='image-card' style={{ width: 400, backgroundColor: 'black', backgroundImage: backgroundImage, height: 200, borderTopLeftRadius: 12, borderTopRightRadius: 12, backgroundSize: 'cover', zIndex: 1, marginBottom: -10 }}>
+                                    <div className='image-card' style={{ width: 400, backgroundColor: '#fecc00', backgroundImage: backgroundImage, height: 200, borderTopLeftRadius: 12, borderTopRightRadius: 12, backgroundSize: 'cover', zIndex: 1, marginBottom: -10 }}>
                                         <div className='circle'>
                                             {photoDataURL ? (
                                                 <img className="circle-photo" alt=' ' src={photoDataURL} style={{ borderRadius: '50%', fontFamily: 'Poppins-light', marginTop: 155, marginLeft: 160, border: 'solid 5px white' }} />

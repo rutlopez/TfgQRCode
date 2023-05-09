@@ -205,11 +205,12 @@ nav ul li a:hover {
   justify-content: center;
   align-items: center;
   position: absolute;
-  left: 45%;
+  left: 50%;
   margin-top: 3rem;
   transform: translateX(-50%);
   cursor: pointer;
 }
+
 
 .floating-icon a {
   border: 1px solid #fff;
@@ -249,48 +250,6 @@ nav ul li a:hover {
 @media screen and (max-width:600px) {
   .titulo-page {
     width: 85vw;
-  }
-}
-
-.border {
-  color: #dbd6d6;
-  text-shadow:
-    -1px -1px 0 white,
-    1px -1px 0 white,
-    -1px 1px 0 white,
-    1px 1px 0 white;
-}
-
-.wave {
-  color: #fecc00;
-  animation: wave 3s ease-in-out infinite;
-}
-
-@keyframes wave {
-
-  0%,
-  100% {
-    clip-path: polygon(0% 47%,
-        10% 48%,
-        33% 54%,
-        54% 60%,
-        70% 61%,
-        84% 59%,
-        100% 52%,
-        100% 100%,
-        0% 100%);
-  }
-
-  50% {
-    clip-path: polygon(0% 60%,
-        15% 65%,
-        34% 66%,
-        51% 62%,
-        67% 50%,
-        84% 45%,
-        100% 46%,
-        100% 100%,
-        0% 100%);
   }
 }
 
@@ -374,8 +333,6 @@ nav ul li a:hover {
 
 }
 
-/* End of features styles*/
-
 
 .feature {
   display: flex;
@@ -413,17 +370,61 @@ nav ul li a:hover {
 
 /* End of feature section styles */
 
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-example {
+  width: 300px;
+  margin-bottom: 30px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-left: 10.5vw;
+}
+
+.card-image {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position-x: right;
+}
+
+.card-info {
+  padding: 20px;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.card-info h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-family: 'Poppins';
+  margin: 0;
+}
+
+.card-info p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  font-family: 'Poppins-light';
+  margin: 0;
+}
+
+/*End of example-cards style*/
+
 .container-card {
   margin-top: 150px;
 }
-
-
 
 .form-section {
   background-color: #fecc00;
   padding: 80px 0;
 }
-
 
 .form-container {
   background-color: #fff;
@@ -501,7 +502,6 @@ nav ul li a:hover {
   .form-container {
     margin-right: 10px;
   }
-
 
   .form-toggle {
     max-width: 725px;
@@ -642,10 +642,10 @@ nav ul li a:hover {
 .photos2 {
   margin-bottom: 4rem;
   margin-top: 2rem;
-
 }
 
 @media screen and (max-width: 768px) {
+
   .form-container {
     width: 80%;
     margin: 0 auto;
@@ -704,7 +704,6 @@ nav ul li a:hover {
   }
 }
 
-
 .selected-image {
   width: 200px;
   height: 200px;
@@ -743,7 +742,6 @@ nav ul li a:hover {
   transform: translateY(-5px) rotate(20deg);
   transition: transform 0.2s ease-in-out;
 }
-
 
 /* End of background card images styles*/
 
@@ -816,7 +814,6 @@ input[type="text"]:focus {
   }
 }
 
-
 /* End of social networks section styles*/
 
 .row {
@@ -824,15 +821,13 @@ input[type="text"]:focus {
   flex-wrap: wrap;
 }
 
-
 @media screen and (max-width: 700px) {
+
   .preview {
     width: 100%;
     margin-top: 50px;
     margin-left: 10px;
   }
-
-
 }
 
 .card {
@@ -845,8 +840,14 @@ input[type="text"]:focus {
 }
 
 .square {
+  margin-bottom: -20px;
+  margin-top: -10px;
   width: 150px;
   height: 150px;
+  display: inherit;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
 }
 
 .circle {

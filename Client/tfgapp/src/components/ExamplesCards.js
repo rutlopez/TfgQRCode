@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
-import previa1 from '../assets/img/example-cards/previa1.png';
-import previa2 from '../assets/img/example-cards/previa2.png';
-import previa3 from '../assets/img/example-cards/previa3.png'
+import previa1 from '../assets/img/example-cards/previa4.png';
+import previa2 from '../assets/img/example-cards/previa5.png';
+import previa3 from '../assets/img/example-cards/previa6.png'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -37,6 +37,7 @@ function ExamplesCards() {
                     </div>
                 </div>
             </div>
+            
             <div className="card-example" data-aos="fade-left">
                 <div className="card-image" style={{ backgroundImage: `url(${previa3})` }}>
                 </div>

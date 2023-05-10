@@ -531,7 +531,7 @@ function Card() {
                                     </div>
                                 </div>
                             </div>
-                            <button className='button-download' sonClick={handleDownloadQRCode}>Descargar QR Code</button>
+                            <button className='button-download' onClick={handleDownloadQRCode}>Descargar QR Code</button>
                             <button className='button-download' onClick={downloadVCard}>Descargar vCard</button>
                         </div>
                     </div>

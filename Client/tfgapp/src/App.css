@@ -95,6 +95,100 @@ nav ul li a:hover {
   color: #fecc00;
 }
 
+.footer {
+  background-color: #333333;
+  padding: 20px;
+
+}
+.footer a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s; 
+}
+
+.footer a:hover {
+  color: #fecc00;
+}
+
+.footer-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-box-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-box-links {
+  display: flex;
+  gap: 30px;
+}
+
+.subscribe-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 100px;
+  margin-top: 23px;
+}
+
+.subscribe-box input[type='email'] {
+  width: 200px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.subscribe-box-send {
+  font-size: 20px;
+  color: #fff;
+  background-color: #555555;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border: none; /* Agrega esto para eliminar el borde si es necesario */
+}
+
+
+.subscribe-box-info {
+  margin-top: 10px;
+  /* Agrega otros estilos según sea necesario */
+}
+
+
+
+
+@media screen and (max-width:45rem) {
+  .footer-box {
+    width: 90%;
+    grid-template-columns: 1fr 2fr;
+  }
+
+}
+
+@media screen and (max-width:35rem) {
+  .footer-box {
+    width: 90%;
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+
+
+
+
 /* End of navbar styles */
 
 .hero {
@@ -917,7 +1011,8 @@ input[type="text"]:focus {
   cursor: pointer;
   margin-right: 10px;
   margin-bottom: 30px;
-  margin-left: 10px; /* Espacio entre los botones */
+  margin-left: 10px;
+  /* Espacio entre los botones */
 }
 
 .button-download:hover {
@@ -925,19 +1020,23 @@ input[type="text"]:focus {
 }
 
 .button-download:nth-child(1) {
-  background-color: #fecc00; /* Color original del primer botón */
+  background-color: #fecc00;
+  /* Color original del primer botón */
 }
 
 .button-download:nth-child(1):hover {
-  background-color: #e0b402; /* Cambio de color al pasar el ratón por encima del primer botón */
+  background-color: #e0b402;
+  /* Cambio de color al pasar el ratón por encima del primer botón */
 }
 
 .button-download:nth-child(2) {
-  background-color: #fecc00; /* Cambio de color para el segundo botón */
+  background-color: #fecc00;
+  /* Cambio de color para el segundo botón */
 }
 
 .button-download:nth-child(2):hover {
-  background-color: #e0b402; /* Cambio de color al pasar el ratón por encima del segundo botón */
+  background-color: #e0b402;
+  /* Cambio de color al pasar el ratón por encima del segundo botón */
 }
 
 

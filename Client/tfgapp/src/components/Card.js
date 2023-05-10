@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import QRCode from "react-qr-code";
 import Footer from './Footer';
 import { SketchPicker } from 'react-color'
@@ -15,6 +15,7 @@ import square8 from '../assets/img/squaresCardPhotos/foto8.jpg'
 import square9 from '../assets/img/squaresCardPhotos/foto9.jpg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { toPng } from 'html-to-image';
 
 /**
  * Inicializamos los datos del form
@@ -28,7 +29,7 @@ const initialFormData = {
     address: "",
     website: "",
     company: "",
-    photo: "",
+    photoFile: null,
     summary: "",
     facebook: "",
     instagram: "",
@@ -118,24 +119,29 @@ function Card() {
 
         if (!file.type.startsWith('image/')) {
             alert('Only image files are allowed.');
-            event.target.value = null; // Limpia el input file si el archivo no es valido
+            event.target.value = null;
         } else {
             reader.onload = (e) => {
-                setFormData({ ...formData, photoFile: file });
+                const base64Image = reader.result; // Representación en base64 de la imagen
+                setFormData({ ...formData, photoFile: file, photoDataURL: base64Image });
             };
 
             reader.readAsDataURL(file);
         }
     };
 
+
     /**
      * Si formData.photoFile existe, entonces se crea una URL de objeto para ese archivo 
      * utilizando la función URL.createObjectURL(). De lo contrario, se asigna una cadena vacía.
      * La función URL.createObjectURL() crea una URL de objeto para el archivo especificado.
      */
+
     const photoDataURL = formData.photoFile
         ? URL.createObjectURL(formData.photoFile)
         : '';
+    console.log(formData.photoFile)
+
 
 
     /**
@@ -188,9 +194,44 @@ function Card() {
         setShowSocialNetwork(!showSocialNetwork);
     };
 
-    useEffect(() =>{
+    /**
+     *  Función que se encarga de generar la imagen del código QR y descargarla como un archivo PNG.
+     */
+    const handleDownloadQRCode = () => {
+        const qrCodeContainer = document.getElementById('qr-code-container');//obtiene el elemento del DOM que tiene el ID "qr-code-container".
+
+        if (qrCodeContainer) {
+            toPng(qrCodeContainer)//Utiliza la función toPng de la librería html-to-image para convertir el contenido del contenedor del código QR a una imagen PNG.
+                .then(function (dataUrl) {
+                    const link = document.createElement('a');//Crea un elemento <a> (enlace) utilizando document.createElement
+                    link.href = dataUrl;//Establece la URL de datos de la imagen como el valor del atributo href del enlace.
+                    link.download = 'codigo-qr.png';//Establece el nombre de archivo sugerido para la descarga del enlace.
+                    link.click();//Simula un clic en el enlace para iniciar la descarga del archivo
+                })
+                .catch(function (error) {
+                    console.error('Error al generar la imagen del código QR:', error);
+                });
+        }
+    };
+
+    /**
+     * Función que genera y descarga un archivo vCard (.vcf) 
+     */
+    function downloadVCard() {
+        const vCardData = `BEGIN:VCARD\nVERSION:3.0\nFN;CHARSET=utf-8:${formData.firstName} ${formData.lastName}\nTEL:${formData.phone}\nADR:${formData.address}\nEMAIL:${formData.email}\nURL:${formData.website}\nPHOTO;ENCODING=BASE64;TYPE=JPEG:${photoDataURL}\nX-SOCIALPROFILE;type=facebook:${formData.linkedin}\nX-SOCIALPROFILE;type=instagram:${formData.linkedin}\nX-SOCIALPROFILE;type=linkedin:${formData.linkedin}\nX-SOCIALPROFILE;type=twitter:${formData.twitter}\nEND:VCARD`;
+        const element = document.createElement('a');//Se crea un elemento <a> utilizando document.createElement('a'). Este elemento se utilizará para la descarga del archivo vCard.
+        const file = new Blob([vCardData], { type: 'text/vcard' });// (Blob representa el contenido del archivo vCard). El contenido se pasa a bytes, donde vCardData se convierte en el contenido del archivo de texto. Se especifica el tipo de archivo como 'text/vcard'
+        element.href = URL.createObjectURL(file);//Esto crea una URL temporal que apunta al archivo vCard generado.
+        element.download = 'mi_tarjeta.vcf';
+        document.body.appendChild(element);//Esto especifica el nombre del archivo que se descargará cuando se haga clic en el enlace.
+        element.click();//Inicia la descarga del archivo vCard con un click.
+        document.body.removeChild(element);
+    }
+
+
+    useEffect(() => {
         AOS.init({
-            duration:2000,
+            duration: 2000,
             once: true
         });
     }, [])
@@ -203,13 +244,13 @@ function Card() {
                     <h2 style={{ fontFamily: 'Poppins', fontWeight: 500, fontSize: '2rem', letterSpacing: '0.5px' }}>
                         Create your business card
                     </h2>
-                    <hr className='titulo-page' style={{ border: 'none', backgroundColor: '#FFC300', height: '2px', borderRadius: '2px', margin: 0, position: 'absolute', bottom: '-10px', left: 0,}} />
+                    <hr className='titulo-page' style={{ border: 'none', backgroundColor: '#FFC300', height: '2px', borderRadius: '2px', margin: 0, position: 'absolute', bottom: '-10px', left: 0, }} />
                 </div>
                 <div className="row">
                     <div className="col-6">
                         <div className="form">
                             <div class="form-toggle" data-aos="fade-right" onClick={toggleForm}>
-                                <h2  class="form-toggle-text" data-aos="fade-right">General information </h2>
+                                <h2 class="form-toggle-text" data-aos="fade-right">General information </h2>
                                 <button class="form-toggle-button" style={{ background: 'white' }}>{showForm ? <FaMinus /> : <FaPlus />}</button>
                             </div>
                             {showForm && (
@@ -421,7 +462,18 @@ function Card() {
                                     <div className='image-card' style={{ width: 400, backgroundColor: '#fecc00', backgroundImage: backgroundImage, height: 200, borderTopLeftRadius: 12, borderTopRightRadius: 12, backgroundSize: 'cover', zIndex: 1, marginBottom: -10 }}>
                                         <div className='circle'>
                                             {photoDataURL ? (
-                                                <img className="circle-photo" alt=' ' src={photoDataURL} style={{ borderRadius: '50%', fontFamily: 'Poppins-light', marginTop: 155, marginLeft: 160, border: 'solid 5px white' }} />
+                                                <img
+                                                    className="circle-photo"
+                                                    alt=""
+                                                    src={photoDataURL}
+                                                    style={{
+                                                        borderRadius: '50%',
+                                                        fontFamily: 'Poppins-light',
+                                                        marginTop: 155,
+                                                        marginLeft: 160,
+                                                        border: 'solid 5px white'
+                                                    }}
+                                                />
                                             ) : (
                                                 <div style={{ width: '100%', height: '100%', borderRadius: '50%' }}></div>
                                             )}
@@ -472,11 +524,15 @@ function Card() {
                                     </div>
                                     <div className="container" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                                         <div className="qr-code">
-                                            <QRCode value={`BEGIN:VCARD\nVERSION:3.0\nFN;CHARSET=utf-8:${formData.firstName} ${formData.lastName}\nTEL:${formData.phone}\nADR:${formData.address}\nEMAIL:${formData.email}\nURL:${formData.website}\nPHOTO;ENCODING=BASE64;TYPE=JPEG:${photoDataURL}\nEND:VCARD`} />
+                                            <QRCode id="qr-code-container"
+                                                value={`BEGIN:VCARD\nVERSION:3.0\nFN;CHARSET=utf-8:${formData.firstName} ${formData.lastName}\nTEL:${formData.phone}\nADR:${formData.address}\nEMAIL:${formData.email}\nURL:${formData.website}\nPHOTO;ENCODING=BASE64;TYPE=JPEG:${photoDataURL}\nX-SOCIALPROFILE;type=facebook:${formData.linkedin}\nX-SOCIALPROFILE;type=instagram:${formData.linkedin}\nX-SOCIALPROFILE;type=linkedin:${formData.linkedin}\nX-SOCIALPROFILE;type=twitter:${formData.twitter}\nEND:VCARD`}
+                                            />
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <button className='button-download' sonClick={handleDownloadQRCode}>Descargar QR Code</button>
+                            <button className='button-download' onClick={downloadVCard}>Descargar vCard</button>
                         </div>
                     </div>
                 </div>

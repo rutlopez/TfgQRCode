@@ -14,6 +14,9 @@ function Hero() {
     }, [])
     const [showFloatingIcon, setShowFloatingIcon] = useState(false);
 
+    /**
+     * Función que hace que el div floating-icon tarde en aparecer 2,5 segundos
+     */
     useEffect(() => {
         const timeout = setTimeout(() => {
             setShowFloatingIcon(true);
@@ -22,10 +25,13 @@ function Hero() {
         return () => clearTimeout(timeout);
     }, []);
 
-
-
+    /**
+     * Constante que hace que el texto con cursor cambie todo el rato y a las velocidades 
+     * establecidas.
+     */
     const [text] = useTypewriter({
-        words: ["Make it easy for customers to contact you with a custom QR code business card.", "Enter your information and we'll generate a QR code image that you can use to print your own professional business cards."],
+        words: ["Make it easy for customers to contact you with a custom QR code business card.",
+                "Enter your information and we'll generate a QR code image that you can use to print your own professional business cards."],
         loop: true,
         typeSpeed: 20,
         deleteSpeed: 10,

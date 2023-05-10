@@ -903,4 +903,43 @@ input[type="text"]:focus {
   margin-bottom: 5rem;
 }
 
+.button-download {
+  background-color: #fecc00;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-bottom: 30px;
+  margin-left: 10px; /* Espacio entre los botones */
+}
+
+.button-download:hover {
+  background-color: #e0b402;
+}
+
+.button-download:nth-child(1) {
+  background-color: #fecc00; /* Color original del primer botón */
+}
+
+.button-download:nth-child(1):hover {
+  background-color: #e0b402; /* Cambio de color al pasar el ratón por encima del primer botón */
+}
+
+.button-download:nth-child(2) {
+  background-color: #fecc00; /* Cambio de color para el segundo botón */
+}
+
+.button-download:nth-child(2):hover {
+  background-color: #e0b402; /* Cambio de color al pasar el ratón por encima del segundo botón */
+}
+
+
+
 /* End of preview card styles */

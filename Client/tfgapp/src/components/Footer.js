@@ -4,24 +4,21 @@ import { RiSendPlaneFill } from 'react-icons/ri';
 
 function Footer() {
   return (
-    <div style={{marginTop:100}} className='footer'>
+    <div style={{ marginTop: 100 }} className='footer'>
       <div className='footer-box'>
         <div className='footer-box-social'>
-          <p style={{color:'white', marginTop:30 , marginLeft:30}}>© 2023 Rut Yela QR Code Business Card</p>
+          <p style={{ color: 'white', marginTop: 30, marginLeft: 30 }}>© 2023 Rut Yela QR Code Business Card</p>
           <div className='footer-social'>
-            <a href='/'>
-              <TiSocialFacebook />
-            </a>
-            <a href='/'>
+            <a href='https://www.linkedin.com/in/rut-yela-2891b4242'>
               <TiSocialLinkedin />
             </a>
-            <a href='/'>
+            <a href='https://twitter.com/picottress'>
               <TiSocialTwitter />
             </a>
-            <a href='/'>
+            <a href='https://www.instagram.com/rutlopeezz_/'>
               <TiSocialInstagram />
             </a>
-            <a href='/'>
+            <a href='https://github.com/rutlopez'>
               <TiSocialGithub />
             </a>
           </div>
@@ -29,7 +26,7 @@ function Footer() {
         <div className='footer-box-links'>
         </div>
         <div className='subscribe-box'>
-          <p style={{fontFamily:'Poppins-light', color:'white'}}>If you have doubts about it send me an e-mail</p>
+          <p style={{ fontFamily: 'Poppins-light', color: 'white' }}>If you have doubts about it send me an e-mail</p>
           <input type='email' placeholder='Enter your email *'></input>
           <div className='subscribe-box-send'>
             <RiSendPlaneFill />

@@ -95,15 +95,17 @@ nav ul li a:hover {
   color: #fecc00;
 }
 
+/* End of navbar styles*/
+
 .footer {
   background-color: #333333;
   padding: 20px;
-
 }
+
 .footer a {
   color: white;
   text-decoration: none;
-  transition: color 0.3s; 
+  transition: color 0.3s;
 }
 
 .footer a:hover {
@@ -114,6 +116,8 @@ nav ul li a:hover {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: wrap;
+  /* Permite que los elementos se envuelvan en múltiples líneas */
 }
 
 .footer-box-social {
@@ -156,40 +160,36 @@ nav ul li a:hover {
   cursor: pointer;
   width: 30px;
   height: 30px;
-  border: none; /* Agrega esto para eliminar el borde si es necesario */
+  border: none;
 }
-
 
 .subscribe-box-info {
   margin-top: 10px;
-  /* Agrega otros estilos según sea necesario */
 }
 
-
-
-
-@media screen and (max-width:45rem) {
+/* Reglas para pantallas más pequeñas */
+@media (max-width: 768px) {
   .footer-box {
-    width: 90%;
-    grid-template-columns: 1fr 2fr;
+    justify-content: center;
+    /* Centra los elementos en pantallas pequeñas */
+    text-align: center;
+    /* Centra el texto en pantallas pequeñas */
   }
 
-}
-
-@media screen and (max-width:35rem) {
-  .footer-box {
-    width: 90%;
-    grid-template-columns: 1fr;
+  .subscribe-box {
+    margin-right: 0;
+    /* Elimina el margen derecho en pantallas pequeñas */
+    margin-bottom: 20px;
+    /* Agrega un margen inferior en pantallas pequeñas */
   }
 
+  .subscribe-box input[type='email'] {
+    width: 100%;
+    /* Ajusta el ancho del input al 100% en pantallas pequeñas */
+  }
 }
 
-
-
-
-
-
-/* End of navbar styles */
+/* End of footer styles */
 
 .hero {
   background: #f8f8f8;

@@ -22,7 +22,7 @@ function ExamplesCards() {
                     Design examples
                 </h2>
                 <p style={{
-                    textAlign: 'center', marginTop: '10px', fontSize: '14px', fontWeight: '300', fontFamily: 'Poppins-light', lineHeight: '1.4',
+                    textAlign: 'center', marginTop: '10px', fontWeight: '300', fontFamily: 'Poppins-light', lineHeight: '1.4',
                     color: '#555', margin: '0 auto', width: '50%', minWidth: '40rem'
                 }}>Create professional business cards with custom QR codes! Our business card creation app allows you to easily design elegant and
                     modern business cards with contact information and a unique QR code. Here are some examples of vCards you can create with our app</p>

@@ -5,6 +5,7 @@ import Hero from './Hero';
 import Features from './Features';
 import StepByStep from './StepByStep';
 import ExamplesCards from './ExamplesCards';
+import Promotion from './Promotion';
 import Faq from './Faq';
 
 
@@ -18,6 +19,7 @@ const Home = () => {
       <StepByStep></StepByStep>
       <ExamplesCards></ExamplesCards>
       <Faq></Faq>
+      <Promotion></Promotion>
       <Footer></Footer>
     </div>
   )

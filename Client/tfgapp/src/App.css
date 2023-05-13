@@ -466,30 +466,49 @@ nav ul li a:hover {
 
 .proceso-paso-a-paso {
   text-align: center;
+  margin: 20px;
+  margin-top: -100px;
+
+}
+
+.titulo-paso-a-paso {
+  color: #fecc00;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 .pasos-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 40px;
 }
 
 .paso {
   width: 300px;
-  margin: 20px;
+  margin-bottom: 40px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.paso:hover {
+  transform: translateY(-15px);
 }
 
 .paso-titulo {
   font-size: 20px;
   margin-top: 0;
+  margin-bottom: 10px;
 }
 
 .paso-descripcion {
   font-size: 16px;
+  margin-bottom: 10px;
+  font-family: 'Poppins-light';
 }
 
 .paso-imagen {
@@ -500,7 +519,14 @@ nav ul li a:hover {
   object-fit: contain;
 }
 
+
 /*End of stepbystep styles*/
+
+.container-examples {
+  width: 100%;
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+}
 
 .card-container {
   display: flex;
@@ -508,11 +534,12 @@ nav ul li a:hover {
 }
 
 .card-example {
-  width: 300px;
+  width: 298px;
   margin-bottom: 30px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   overflow: hidden;
+  height: 405px;
   margin-left: 10.5vw;
 }
 
@@ -625,6 +652,35 @@ nav ul li a:hover {
 }
 
 /*end od faq styles*/
+
+.wave-background {
+  position: relative;
+  margin-top: 90px;
+}
+
+.wave-background svg {
+  position: absolute;
+  bottom: 109px;
+  left: -20px;
+  width: 1519px;
+  height: 338px;
+}
+.promotion-link {
+  background-color: white;
+  color: #fecc00;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-family: 'Poppins';
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.promotion-link:hover {
+  background-color: #333333;
+  color: white;
+}
+
+/*end of promotion styles*/
 
 .container-card {
   margin-top: 150px;

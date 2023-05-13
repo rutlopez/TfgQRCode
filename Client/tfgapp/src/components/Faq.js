@@ -44,7 +44,7 @@ const Faq = () => {
   };
 
   return (
-    <div style={{marginTop:120}} data-aos="fade-up" className="faq-section">
+    <div style={{}} data-aos="fade-up" className="faq-section">
     <AiOutlineQuestionCircle size={35} style={{marginLeft:'50%'}} color='#fecc00' className="faq-icon" />
     <h2 className="faq-heading">Frequently Asked Questions</h2>
       <div className="faq-items" >

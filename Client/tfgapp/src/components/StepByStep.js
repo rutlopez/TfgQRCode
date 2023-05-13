@@ -51,18 +51,18 @@ const StepByStep = () => {
   return (
     <div className="proceso-paso-a-paso">
       <FaArrowRight color="#fecc00" size={35} />
-      <h2 style={{ color: '#fecc00', fontSize: '2.5rem' }}>Step by Step</h2>
+      <h2 className="titulo-paso-a-paso">Step By Step</h2>
       <div className="pasos-container">
         {steps.map((paso, index) => (
           <div key={index} className="paso">
             <h3 className="paso-titulo">{paso.title}</h3>
             <p className="paso-descripcion">{paso.description}</p>
-            <img className="paso-imagen" src={paso.image} alt={`Step ${index + 1}`} />
+            <img className="paso-imagen" src={paso.image} alt={`Paso ${index + 1}`} />
           </div>
         ))}
       </div>
     </div>
   );
-};
+}
 
 export default StepByStep;

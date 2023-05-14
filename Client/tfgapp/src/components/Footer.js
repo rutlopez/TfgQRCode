@@ -1,5 +1,5 @@
 import React from 'react';
-import { TiSocialFacebook, TiSocialLinkedin, TiSocialTwitter, TiSocialInstagram, TiSocialGithub } from 'react-icons/ti';
+import { TiSocialLinkedin, TiSocialTwitter, TiSocialInstagram, TiSocialGithub } from 'react-icons/ti';
 import { RiSendPlaneFill } from 'react-icons/ri';
 
 function Footer() {

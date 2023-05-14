@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import heroImg from '../assets/img/hero.jpg'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
-import { SlMouse } from "react-icons/sl";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -12,18 +11,6 @@ function Hero() {
 
         });
     }, [])
-    const [showFloatingIcon, setShowFloatingIcon] = useState(false);
-
-    /**
-     * Función que hace que el div floating-icon tarde en aparecer 2,5 segundos
-     */
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            setShowFloatingIcon(true);
-        }, 2500);
-
-        return () => clearTimeout(timeout);
-    }, []);
 
     /**
      * Constante que hace que el texto con cursor cambie todo el rato y a las velocidades 
@@ -51,17 +38,6 @@ function Hero() {
                     <a href="#features" className="btn">Learn More</a>
                     <a href="/card" className="btn">Get Started</a>
                 </div>
-                {showFloatingIcon && (
-                    <div
-                        className='floating-icon'
-                        data-aos="fade-down"
-                        data-aos-once="true"
-                    >
-                        <a href='#features'>
-                            <SlMouse color='#fff' size={25} className='mouse' />
-                        </a>
-                    </div>
-                )}
             </div>
             <div class="hero-image" data-aos="fade-left">
                 <img src={heroImg} alt="Hero" ></img>

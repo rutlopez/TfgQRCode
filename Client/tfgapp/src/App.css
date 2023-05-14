@@ -1,3 +1,4 @@
+
 header {
   top: 0;
   left: 0;
@@ -10,21 +11,21 @@ header {
 }
 
 img {
-  max-height: 80px;
+  max-height: 90px;
 }
 
-nav ul {
+.nav1 ul {
   list-style: none;
   display: flex;
 
 
 }
 
-nav ul li:not(:last-child) {
+.nav1 ul li:not(:last-child) {
   margin-right: 30px;
 }
 
-nav ul li a {
+.nav1 ul li a {
   color: black;
   text-decoration: none;
   font-size: 18px;
@@ -33,7 +34,7 @@ nav ul li a {
   transition: color 0.2s ease-in-out;
 }
 
-nav a {
+.nav1 a {
   transition: 0.3s ease-in-out;
   -webkit-transition: 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out;
@@ -41,7 +42,7 @@ nav a {
   -ms-transiton: 0.3s ease-in-out
 }
 
-nav a::after {
+.nav1 a::after {
   display: block;
   content: "";
   width: 0;
@@ -62,15 +63,15 @@ nav a::after {
   -ms-transiton: 0.3s ease-in-out
 }
 
-/* nav li:nth-of-type(5) a::after {
+.nav1 li:nth-of-type(5) a::after {
   all: unset;
-} */
+} 
 
-nav a:hover::after {
+.nav1 a:hover::after {
   width: 30px;
 }
 
-nav li:nth-of-type(5) a {
+.nav1 li:nth-of-type(5) a {
   padding: 0.5em 1em;
   background: #cbcbcb;
   border-radius: 10px;
@@ -86,16 +87,54 @@ nav li:nth-of-type(5) a {
   -ms-transiton: 0.3s ease-in-out
 }
 
-nav li:nth-of-type(5) a:hover {
+.nav1 li:nth-of-type(5) a:hover {
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 
-nav ul li a:hover {
+.nav1 ul li a:hover {
   color: #fecc00;
 }
 
 /* End of navbar styles*/
+
+.nav2-container {
+  background: rgba(0, 0, 0, 0.3);
+  width: max-content;
+  display: block;
+  padding: 0.4rem 1.7rem;
+  z-index: 2;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2rem;
+  display: flex;
+  gap: 0.8rem;
+  border-radius: 3rem;
+  backdrop-filter: blur(15px);
+}
+
+.nav2-container a {
+  background: transparent;
+  padding: 0.9rem;
+  border-radius: 50%;
+  display: flex;
+  color: white;
+  font-size: 1.1rem;
+  width: 3.33rem;
+  padding-left: 1.1rem;
+}
+
+.nav2-container a:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.nav2-container a.active {
+  background: #fecc00;
+  color: white;
+}
+
+/*End of styles de navbar2*/
 
 .footer {
   background-color: #333333;
@@ -290,52 +329,7 @@ nav ul li a:hover {
   max-height: 600px;
 }
 
-.floating-icon {
-  background-color: #fecc00;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 50%;
-  margin-top: 3rem;
-  transform: translateX(-50%);
-  cursor: pointer;
-}
-
-
-.floating-icon a {
-  border: 1px solid #fff;
-  width: 2.8rem;
-  height: 2.8rem;
-  border-radius: 50%;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.mouse {
-  transform: translateY(-25%);
-  animation: bounce .8s ease infinite alternate;
-}
-
-@keyframes bounce {
-  0% {
-    transform: translateY(-25%);
-  }
-
-  100% {
-    transform: translateY(25%);
-  }
-}
-
 /* End of hero section styles*/
-
 
 .titulo-page {
   width: 52vw;
@@ -567,11 +561,17 @@ nav ul li a:hover {
   margin: 0;
 }
 
-.card-info p {
-  font-size: 14px;
-  margin-bottom: 20px;
-  font-family: 'Poppins-light';
-  margin: 0;
+.container-examples p {
+  width: 100%;
+  max-width: 40rem;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .container-examples p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
 }
 
 /*End of example-cards style*/
@@ -664,7 +664,10 @@ nav ul li a:hover {
   left: -20px;
   width: 1519px;
   height: 338px;
+  width: 100%;
+  height: auto;
 }
+
 .promotion-link {
   background-color: white;
   color: #fecc00;
@@ -1166,6 +1169,19 @@ input[type="text"]:focus {
   height: 'auto';
   margin-top: 5rem;
   margin-bottom: 5rem;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
 .button-download {

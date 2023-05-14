@@ -16,6 +16,7 @@ import square9 from '../assets/img/squaresCardPhotos/foto9.jpg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { toPng } from 'html-to-image';
+import html2canvas from 'html2canvas';
 
 /**
  * Inicializamos los datos del form
@@ -228,6 +229,20 @@ function Card() {
         document.body.removeChild(element);
     }
 
+    /**
+    * Función descarga la vCard como imagen
+    */
+    const handleDownloadImage = () => {
+        const previewElement = document.querySelector('.card-preview');
+        html2canvas(previewElement, { scale: 3 }).then((canvas) => {
+            const image = canvas.toDataURL('image/png');
+
+            const link = document.createElement('a');
+            link.href = image;
+            link.download = 'vCard.png';
+            link.click();
+        });
+    };
 
     useEffect(() => {
         AOS.init({
@@ -457,8 +472,8 @@ function Card() {
                     <div className='row'>
                         <div className="col-12 col-md-6">
                             <div className="preview" style={{ maxHeight: '600px', overflowY: 'auto', marginBottom: '30px' }}>
+                                <h2 style={{ fontFamily: 'Poppins', marginTop: -7.5, marginBottom: 22 }}>Card Preview</h2>
                                 <div className="card-preview">
-                                    <h2 style={{ fontFamily: 'Poppins', marginTop: -7.5, marginBottom: 22 }}>Card Preview</h2>
                                     <div className='image-card' style={{ width: 400, backgroundColor: '#fecc00', backgroundImage: backgroundImage, height: 200, borderTopLeftRadius: 12, borderTopRightRadius: 12, backgroundSize: 'cover', zIndex: 1, marginBottom: -10 }}>
                                         <div className='circle'>
                                             {photoDataURL ? (
@@ -531,8 +546,13 @@ function Card() {
                                     </div>
                                 </div>
                             </div>
-                            <button className='button-download' onClick={handleDownloadQRCode}>Descargar QR Code</button>
-                            <button className='button-download' onClick={downloadVCard}>Descargar vCard</button>
+                            <div className="button-container">
+                                <div className="button-row">
+                                    <button className="button-download" onClick={handleDownloadQRCode}>Download QR Code</button>
+                                    <button className="button-download" onClick={downloadVCard}>Download vCard</button>
+                                </div>
+                                <button className="button-download" onClick={handleDownloadImage}>Download vCard image</button>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import QRCode from "react-qr-code";
 import Footer from './Footer';
-import { SketchPicker } from 'react-color'
+import { SketchPicker } from 'react-color';
+
 import Header from './NavBar';
 import { FaEnvelope, FaMapMarkerAlt, FaPhone, FaGlobe, FaBuilding, FaInfoCircle, FaPlus, FaMinus, FaCloudUploadAlt, FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import square1 from '../assets/img/squaresCardPhotos/foto1.png'
@@ -540,7 +541,7 @@ function Card() {
                                     <div className="container" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                                         <div className="qr-code">
                                             <QRCode id="qr-code-container"
-                                                value={`BEGIN:VCARD\nVERSION:3.0\nFN;CHARSET=utf-8:${formData.firstName} ${formData.lastName}\nTEL:${formData.phone}\nADR:${formData.address}\nEMAIL:${formData.email}\nURL:${formData.website}\nPHOTO;ENCODING=BASE64;TYPE=JPEG:${photoDataURL}\nX-SOCIALPROFILE;type=facebook:${formData.linkedin}\nX-SOCIALPROFILE;type=instagram:${formData.linkedin}\nX-SOCIALPROFILE;type=linkedin:${formData.linkedin}\nX-SOCIALPROFILE;type=twitter:${formData.twitter}\nEND:VCARD`}
+                                                value={`BEGIN:VCARD\nVERSION:3.0\nFN;CHARSET=utf-8:${formData.firstName} ${formData.lastName}\nTEL:${formData.phone}\nADR:${formData.address}\nEMAIL:${formData.email}\nURL:${formData.website}\nPHOTO;ENCODING=BASE64;TYPE=JPEG:${photoDataURL}\nX-SOCIALPROFILE;type=facebook:${formData.facebook}\nX-SOCIALPROFILE;type=instagram:${formData.instagram}\nX-SOCIALPROFILE;type=linkedin:${formData.linkedin}\nX-SOCIALPROFILE;type=twitter:${formData.twitter}\nEND:VCARD`}
                                             />
                                         </div>
                                     </div>

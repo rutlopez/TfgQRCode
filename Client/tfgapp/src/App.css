@@ -475,11 +475,14 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
+  flex-direction: row; /* Añade esta línea para mostrar el contenido horizontalmente */
+
 }
 
 .paso {
-  width: 300px;
+  width: 700px; /* Modifica el ancho a 'auto' para que se ajuste al contenido */
+  margin: 20px;
   margin-bottom: 40px;
   padding: 20px;
   border: 1px solid #ccc;

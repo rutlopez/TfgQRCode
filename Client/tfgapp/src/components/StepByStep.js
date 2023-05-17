@@ -55,10 +55,28 @@ const StepByStep = () => {
         <h2 className="titulo-paso-a-paso">Step By Step</h2>
         <div className="pasos-container" data-aos="fade-right">
           {steps.map((paso, index) => (
-            <div key={index} className="paso" >
-              <h3 className="paso-titulo">{paso.title}</h3>
-              <p className="paso-descripcion">{paso.description}</p>
-              <img className="paso-imagen" src={paso.image} alt={`Paso ${index + 1}`} />
+            <div key={index} className={`paso ${index % 2 === 0 ? 'imagen-izquierda' : 'imagen-derecha'}`}>
+              {index % 2 === 0 ? (
+                <>
+                  <img className="paso-imagen" src={paso.image} alt={`Paso ${index + 1}`} />
+                  <div className="paso-contenido">
+                    <div className="paso-texto">
+                      <h3 className="paso-titulo">{paso.title}</h3>
+                      <p className="paso-descripcion">{paso.description}</p>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="paso-contenido">
+                    <div className="paso-texto">
+                      <h3 className="paso-titulo">{paso.title}</h3>
+                      <p className="paso-descripcion">{paso.description}</p>
+                    </div>
+                  </div>
+                  <img className="paso-imagen" src={paso.image} alt={`Paso ${index + 1}`} />
+                </>
+              )}
             </div>
           ))}
         </div>

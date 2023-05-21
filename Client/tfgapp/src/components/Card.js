@@ -235,15 +235,37 @@ function Card() {
     */
     const handleDownloadImage = () => {
         const previewElement = document.querySelector('.card-preview');
+        const circleElement = document.querySelector('.circle');
+        const circlePhoto = document.querySelector('.circle-photo');
+        // Modificar las dimensiones del círculo
+        circleElement.style.width = '80px';
+        circleElement.style.height = '80px';
+
+        // Modificar las dimensiones de la foto del círculo
+        circlePhoto.style.width = '100%';
+        circlePhoto.style.height = '120%';
+        circlePhoto.style.objectFit = 'cover';
+        
+
         html2canvas(previewElement, { scale: 3 }).then((canvas) => {
             const image = canvas.toDataURL('image/png');
-
             const link = document.createElement('a');
             link.href = image;
             link.download = 'vCard.png';
             link.click();
+
+            // Restaurar las dimensiones originales del círculo 
+            circleElement.style.width = '80px';
+            circleElement.style.height = '80px';
+
+            // Restaurar las dimensiones originales de la foto del círculo
+            circlePhoto.style.width = '100%';
+            circlePhoto.style.height = '100%';
+            circlePhoto.style.objectFit = 'cover';
+
         });
     };
+
 
     useEffect(() => {
         AOS.init({
@@ -472,7 +494,7 @@ function Card() {
                     </div>
                     <div className='row'>
                         <div className="col-12 col-md-6">
-                            <div className="preview" style={{ maxHeight: '600px', overflowY: 'auto', marginBottom: '30px' }}>
+                            <div className="preview" style={{ maxHeight: '700px', overflowY: 'auto', marginBottom: '30px' }}>
                                 <h2 style={{ fontFamily: 'Poppins', marginTop: -7.5, marginBottom: 22 }}>Card Preview</h2>
                                 <div className="card-preview">
                                     <div className='image-card' style={{ width: 400, backgroundColor: '#fecc00', backgroundImage: backgroundImage, height: 200, borderTopLeftRadius: 12, borderTopRightRadius: 12, backgroundSize: 'cover', zIndex: 1, marginBottom: -10 }}>
@@ -552,7 +574,7 @@ function Card() {
                                     <button className="button-download" onClick={handleDownloadQRCode}>Download QR Code</button>
                                     <button className="button-download" onClick={downloadVCard}>Download vCard</button>
                                 </div>
-                                <button className="button-download" onClick={handleDownloadImage}>Download vCard image</button>
+                                <button className="button-download" onClick={handleDownloadImage}>Download image</button>
                             </div>
                         </div>
                     </div>

@@ -49,6 +49,7 @@ const initialFormData = {
     etsy: "",
     amazon: "",
     snapchat: "",
+    ubereats:"",
     logo: ""
 };
 
@@ -1180,7 +1181,7 @@ function Card() {
                                         </div>
                                         <div className="qr-code">
                                             <QRCode id="qr-code-container"
-                                                value={`BEGIN:VCARD\nVERSION:3.0\nFN;CHARSET=utf-8:${formData.firstName} ${formData.lastName}\nTEL:${formData.phone}\nADR:${formData.address}\nEMAIL:${formData.email}\nURL:${formData.website}\nNOTE:${formData.summary}\nPHOTO;ENCODING=BASE64;TYPE=JPEG:${photoDataURL}${formData.facebook ? `\nX-SOCIALPROFILE;type=facebook:${formData.facebook}` : ''}${formData.instagram ? `\nX-SOCIALPROFILE;type=instagram:${formData.instagram}` : ''}${formData.linkedin ? `\nX-SOCIALPROFILE;type=linkedin:${formData.linkedin}` : ''}${formData.twitter ? `\nX-SOCIALPROFILE;type=twitter:${formData.twitter}` : ''}\nEND:VCARD`}
+                                                value={`BEGIN:VCARD\nVERSION:3.0\nFN;CHARSET=utf-8:${formData.firstName} ${formData.lastName}\nTEL:${formData.phone}\nADR:${formData.address}\nEMAIL:${formData.email}\nURL:${formData.website}\nNOTE:${formData.summary}\nPHOTO;ENCODING=BASE64;TYPE=JPEG:${photoDataURL}${formData.facebook ? `\nX-SOCIALPROFILE;type=facebook:${formData.facebook}` : ''}${formData.instagram ? `\nX-SOCIALPROFILE;type=instagram:${formData.instagram}` : ''}${formData.linkedin ? `\nX-SOCIALPROFILE;type=linkedin:${formData.linkedin}` : ''}${formData.twitter ? `\nX-SOCIALPROFILE;type=twitter:${formData.twitter}` : ''}${formData.pinterest ? `\nX-SOCIALPROFILE;type=pinterest:${formData.pinterest}` : ''}${formData.youtube ? `\nX-SOCIALPROFILE;type=youtube:${formData.youtube}` : ''}${formData.reddit ? `\nX-SOCIALPROFILE;type=reddit:${formData.reddit}` : ''}${formData.skype ? `\nX-SOCIALPROFILE;type=skype:${formData.skype}` : ''}${formData.tiktok ? `\nX-SOCIALPROFILE;type=tiktok:${formData.tiktok}` : ''}${formData.twitch ? `\nX-SOCIALPROFILE;type=twitch:${formData.twitch}` : ''}${formData.github ? `\nX-SOCIALPROFILE;type=github:${formData.github}` : ''}${formData.shopify ? `\nX-SOCIALPROFILE;type=shopify:${formData.shopify}` : ''}${formData.etsy ? `\nX-SOCIALPROFILE;type=etsy:${formData.etsy}` : ''}${formData.amazon ? `\nX-SOCIALPROFILE;type=amazon:${formData.amazon}` : ''}${formData.snapchat ? `\nX-SOCIALPROFILE;type=snapchat:${formData.snapchat}` : ''}${formData.ubereats ? `\nX-SOCIALPROFILE;type=ubereats:${formData.ubereats}` : ''}\nEND:VCARD`}
                                             />
                                         </div>
                                     </div>

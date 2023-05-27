@@ -1135,18 +1135,49 @@ img {
 }
 
 .remove-button {
-  background: none;
+  background-color: #fecc00; /* Color de fondo */
   border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
   cursor: pointer;
-  padding: 0;
-  color: #fecc00;
-  font-size: 18px;
-  transition: transform 0.3s ease-in-out;
+  margin-top: 8px;
+  transition: background-color 0.3s ease; /* Transición de color de fondo */
 }
 
 .remove-button:hover {
-  transform: scale(1.2);
+  background-color: #fde06d; /* Color de fondo al pasar el mouse */
 }
+
+.remove-button:focus {
+  outline: none; /* Elimina el contorno al hacer clic */
+}
+
+.remove-button .icon {
+  margin-right: 5px;
+}
+
+.remove-button .icon path {
+  fill: white; /* Color del icono */
+}
+
+/* Animación */
+@keyframes removeButtonAnimation {
+  0% {
+    transform: scale(1); /* Escala inicial */
+  }
+  50% {
+    transform: scale(1.2); /* Escala intermedia */
+  }
+  100% {
+    transform: scale(1); /* Escala final */
+  }
+}
+
+.remove-button {
+  animation: removeButtonAnimation 0.3s linear; /* Aplica la animación al botón */
+}
+
 
 .social-icons-container {
   margin-top: .5rem !important;

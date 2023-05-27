@@ -543,8 +543,12 @@ function Card() {
                                     </div>
                                 </div>
                                 {showUsername.facebook && (
-                                    <div>
-                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Facebook username </p>
+                                    <div style={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                    }}>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginBottom: -20 }}>Enter your Facebook username </p>
                                         <div className="input-row">
                                             <input
                                                 type="text"
@@ -556,15 +560,20 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('facebook')}>
-                                                <FaTrash />
+                                                <FaTrash style={{marginTop:3}}/>
                                             </button>
                                         </div>
                                     </div>
                                 )}
 
                                 {showUsername.instagram && (
-                                    <div>
-                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Instagram username </p>
+                                    <div style={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+
+                                    }}>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12,  marginBottom: -20 }}>Enter your Instagram username </p>
                                         <div className="input-row">
                                             <input
                                                 type="text"
@@ -576,15 +585,20 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('instagram')}>
-                                                <FaTrash />
+                                                <FaTrash style={{marginTop:3}} />
                                             </button>
                                         </div>
                                     </div>
                                 )}
 
                                 {showUsername.linkedin && (
-                                    <div>
-                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Linkedin username </p>
+                                    <div style={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+
+                                    }}>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginBottom: -20 }}>Enter your Linkedin username </p>
                                         <div className="input-row">
                                             <input
                                                 type="text"
@@ -596,15 +610,20 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('linkedin')}>
-                                                <FaTrash />
+                                                <FaTrash style={{marginTop:3}}/>
                                             </button>
                                         </div>
                                     </div>
                                 )}
 
                                 {showUsername.twitter && (
-                                    <div>
-                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Twitter username </p>
+                                    <div style={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+
+                                    }}>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginBottom: -20 }}>Enter your Twitter username </p>
                                         <div className="input-row">
                                             <input
                                                 type="text"
@@ -616,15 +635,19 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('twitter')}>
-                                                <FaTrash />
+                                                <FaTrash style={{marginTop:3}}/>
                                             </button>
                                         </div>
                                     </div>
                                 )}
 
                                 {showUsername.pinterest && (
-                                    <div>
-                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Pinterest username </p>
+                                    <div style={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                    }}>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginBottom: -20, }}>Enter your Pinterest username </p>
                                         <div className="input-row">
                                             <input
                                                 type="text"
@@ -636,14 +659,18 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('pinterest')}>
-                                                <FaTrash />
+                                                <FaTrash style={{marginTop:3}}/>
                                             </button>
                                         </div>
                                     </div>
                                 )}
                                 {showUsername.youtube && (
-                                    <div>
-                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Youtube username </p>
+                                    <div style={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                    }}>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginBottom: -20, }}>Enter your Youtube username </p>
                                         <div className="input-row">
                                             <input
                                                 type="text"
@@ -655,14 +682,18 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('youtube')}>
-                                                <FaTrash />
+                                                <FaTrash style={{marginTop:3}}/>
                                             </button>
                                         </div>
                                     </div>
                                 )}
                                 {showUsername.reddit && (
-                                    <div>
-                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Reddit username </p>
+                                    <div style={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                    }}>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginBottom: -20, }}>Enter your Reddit username </p>
                                         <div className="input-row">
                                             <input
                                                 type="text"
@@ -674,14 +705,18 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('reddit')}>
-                                                <FaTrash />
+                                                <FaTrash style={{marginTop:3}}/>
                                             </button>
                                         </div>
                                     </div>
                                 )}
                                 {showUsername.skype && (
-                                    <div>
-                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Skype username </p>
+                                    <div style={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                    }}>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginBottom: -20, }}>Enter your Skype username </p>
                                         <div className="input-row">
                                             <input
                                                 type="text"
@@ -693,14 +728,18 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('skype')}>
-                                                <FaTrash />
+                                                <FaTrash style={{marginTop:3}}/>
                                             </button>
                                         </div>
                                     </div>
                                 )}
                                 {showUsername.tiktok && (
-                                    <div>
-                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Tiktok username </p>
+                                    <div style={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                    }}>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginBottom: -20, }}>Enter your Tiktok username </p>
                                         <div className="input-row">
                                             <input
                                                 type="text"
@@ -712,14 +751,18 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('tiktok')}>
-                                                <FaTrash />
+                                                <FaTrash style={{marginTop:3}}/>
                                             </button>
                                         </div>
                                     </div>
                                 )}
                                 {showUsername.twitch && (
-                                    <div>
-                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Twitch username </p>
+                                    <div style={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                    }}>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginBottom: -20, }}>Enter your Twitch username </p>
                                         <div className="input-row">
                                             <input
                                                 type="text"
@@ -731,14 +774,18 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('twitch')}>
-                                                <FaTrash />
+                                                <FaTrash style={{marginTop:3}}/>
                                             </button>
                                         </div>
                                     </div>
                                 )}
                                 {showUsername.github && (
-                                    <div>
-                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Github username </p>
+                                    <div style={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                    }}>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginBottom: -20, }}>Enter your Github username </p>
                                         <div className="input-row">
                                             <input
                                                 type="text"
@@ -750,14 +797,18 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('github')}>
-                                                <FaTrash />
+                                                <FaTrash style={{marginTop:3}}/>
                                             </button>
                                         </div>
                                     </div>
                                 )}
                                 {showUsername.shopify && (
-                                    <div>
-                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Shopify username </p>
+                                    <div style={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                    }}>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginBottom: -20, }}>Enter your Shopify username </p>
                                         <div className="input-row">
                                             <input
                                                 type="text"
@@ -769,14 +820,18 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('shopify')}>
-                                                <FaTrash />
+                                                <FaTrash style={{marginTop:3}}/>
                                             </button>
                                         </div>
                                     </div>
                                 )}
                                 {showUsername.etsy && (
-                                    <div>
-                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Etsy username </p>
+                                    <div style={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                    }}>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginBottom: -20, }}>Enter your Etsy username </p>
                                         <div className="input-row">
                                             <input
                                                 type="text"
@@ -788,14 +843,18 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('etsy')}>
-                                                <FaTrash />
+                                                <FaTrash style={{marginTop:3}}/>
                                             </button>
                                         </div>
                                     </div>
                                 )}
                                 {showUsername.amazon && (
-                                    <div>
-                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Amazon username </p>
+                                    <div style={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                    }}>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginBottom: -20, }}>Enter your Amazon username </p>
                                         <div className="input-row">
                                             <input
                                                 type="text"
@@ -807,14 +866,18 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('amazon')}>
-                                                <FaTrash />
+                                                <FaTrash style={{marginTop:3}}/>
                                             </button>
                                         </div>
                                     </div>
                                 )}
                                 {showUsername.snapchat && (
-                                    <div>
-                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Snapchat username </p>
+                                    <div style={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                    }}>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginBottom: -20, }}>Enter your Snapchat username </p>
                                         <div className="input-row">
                                             <input
                                                 type="text"
@@ -826,14 +889,18 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('snapchat')}>
-                                                <FaTrash />
+                                                <FaTrash style={{marginTop:3}}/>
                                             </button>
                                         </div>
                                     </div>
                                 )}
                                 {showUsername.ubereats && (
-                                    <div>
-                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Uber Eats username </p>
+                                    <div style={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                    }}>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginBottom: -20, }}>Enter your Uber Eats username </p>
                                         <div className="input-row">
                                             <input
                                                 type="text"
@@ -845,7 +912,7 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('ubereats')}>
-                                                <FaTrash />
+                                                <FaTrash style={{marginTop:3}}/>
                                             </button>
                                         </div>
                                     </div>

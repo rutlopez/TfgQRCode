@@ -560,7 +560,7 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('facebook')}>
-                                                <FaTrash style={{marginTop:3}}/>
+                                                <FaTrash style={{ marginTop: 3 }} />
                                             </button>
                                         </div>
                                     </div>
@@ -573,7 +573,7 @@ function Card() {
                                         alignItems: 'center',
 
                                     }}>
-                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12,  marginBottom: -20 }}>Enter your Instagram username </p>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginBottom: -20 }}>Enter your Instagram username </p>
                                         <div className="input-row">
                                             <input
                                                 type="text"
@@ -585,7 +585,7 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('instagram')}>
-                                                <FaTrash style={{marginTop:3}} />
+                                                <FaTrash style={{ marginTop: 3 }} />
                                             </button>
                                         </div>
                                     </div>
@@ -610,7 +610,7 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('linkedin')}>
-                                                <FaTrash style={{marginTop:3}}/>
+                                                <FaTrash style={{ marginTop: 3 }} />
                                             </button>
                                         </div>
                                     </div>
@@ -635,7 +635,7 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('twitter')}>
-                                                <FaTrash style={{marginTop:3}}/>
+                                                <FaTrash style={{ marginTop: 3 }} />
                                             </button>
                                         </div>
                                     </div>
@@ -659,7 +659,7 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('pinterest')}>
-                                                <FaTrash style={{marginTop:3}}/>
+                                                <FaTrash style={{ marginTop: 3 }} />
                                             </button>
                                         </div>
                                     </div>
@@ -682,7 +682,7 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('youtube')}>
-                                                <FaTrash style={{marginTop:3}}/>
+                                                <FaTrash style={{ marginTop: 3 }} />
                                             </button>
                                         </div>
                                     </div>
@@ -705,7 +705,7 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('reddit')}>
-                                                <FaTrash style={{marginTop:3}}/>
+                                                <FaTrash style={{ marginTop: 3 }} />
                                             </button>
                                         </div>
                                     </div>
@@ -728,7 +728,7 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('skype')}>
-                                                <FaTrash style={{marginTop:3}}/>
+                                                <FaTrash style={{ marginTop: 3 }} />
                                             </button>
                                         </div>
                                     </div>
@@ -751,7 +751,7 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('tiktok')}>
-                                                <FaTrash style={{marginTop:3}}/>
+                                                <FaTrash style={{ marginTop: 3 }} />
                                             </button>
                                         </div>
                                     </div>
@@ -774,7 +774,7 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('twitch')}>
-                                                <FaTrash style={{marginTop:3}}/>
+                                                <FaTrash style={{ marginTop: 3 }} />
                                             </button>
                                         </div>
                                     </div>
@@ -797,7 +797,7 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('github')}>
-                                                <FaTrash style={{marginTop:3}}/>
+                                                <FaTrash style={{ marginTop: 3 }} />
                                             </button>
                                         </div>
                                     </div>
@@ -820,7 +820,7 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('shopify')}>
-                                                <FaTrash style={{marginTop:3}}/>
+                                                <FaTrash style={{ marginTop: 3 }} />
                                             </button>
                                         </div>
                                     </div>
@@ -843,7 +843,7 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('etsy')}>
-                                                <FaTrash style={{marginTop:3}}/>
+                                                <FaTrash style={{ marginTop: 3 }} />
                                             </button>
                                         </div>
                                     </div>
@@ -866,7 +866,7 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('amazon')}>
-                                                <FaTrash style={{marginTop:3}}/>
+                                                <FaTrash style={{ marginTop: 3 }} />
                                             </button>
                                         </div>
                                     </div>
@@ -889,7 +889,7 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('snapchat')}>
-                                                <FaTrash style={{marginTop:3}}/>
+                                                <FaTrash style={{ marginTop: 3 }} />
                                             </button>
                                         </div>
                                     </div>
@@ -912,7 +912,7 @@ function Card() {
                                                 placeholder="Username"
                                             />
                                             <button className="remove-button" onClick={() => handleRemoveClick('ubereats')}>
-                                                <FaTrash style={{marginTop:3}}/>
+                                                <FaTrash style={{ marginTop: 3 }} />
                                             </button>
                                         </div>
                                     </div>
@@ -933,7 +933,6 @@ function Card() {
                                                         <div className="px-0 w-100">
                                                             <div className="text-center card-wrapper">
                                                                 <div className="img-wrap">
-
                                                                     {photoDataURL ? (
                                                                         <div className='circle' >
                                                                             <img
@@ -950,6 +949,20 @@ function Card() {
                                                                     ) : (
                                                                         <div className='img-wrap'>
                                                                             <img className="img-body" style={{ backgroundImage: 'url(https://e7.pngegg.com/pngimages/323/705/png-clipart-user-profile-get-em-cardiovascular-disease-zingah-avatar-miscellaneous-white.png)', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }} />
+                                                                        </div>
+                                                                    )}
+                                                                </div>
+                                                                <div className="img-wrap">
+                                                                    {formData.logo ? (
+                                                                        <div className='square' >
+                                                                            <img
+                                                                                className="square-logo"
+                                                                                alt=""
+                                                                                src={formData.logo}
+                                                                            />
+                                                                        </div>
+                                                                    ) : (
+                                                                        <div className='img-wrap'>
                                                                         </div>
                                                                     )}
                                                                 </div>
@@ -976,7 +989,7 @@ function Card() {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div className='item-body' style={{ marginTop: 10 }}>
+                                                    <div className='item-body' style={{ marginTop: 40 }}>
                                                         <div className="details-row w-100">
                                                             <small className="d-block text-center" >Personal description</small>
                                                         </div>

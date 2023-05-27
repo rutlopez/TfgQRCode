@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import QRCode from "react-qr-code";
 import Footer from './Footer';
 import { SketchPicker } from 'react-color';
-
 import Header from './NavBar';
-import { FaEnvelope, FaMapMarkerAlt, FaPhone, FaGlobe, FaBuilding, FaInfoCircle, FaPlus, FaMinus, FaCloudUploadAlt, FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaTrash, FaPhone, FaGlobe, FaBuilding, FaInfoCircle, FaPlus, FaMinus, FaCloudUploadAlt, FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaPinterest, FaYoutube, FaReddit, FaSkype, FaTiktok, FaTwitch, FaGithub, FaShopify, FaEtsy, FaAmazon, FaSnapchat } from 'react-icons/fa';
+import { SiUbereats } from 'react-icons/si';
+
 import square1 from '../assets/img/squaresCardPhotos/foto1.png'
 import square2 from '../assets/img/squaresCardPhotos/foto2.jpg'
 import square3 from '../assets/img/squaresCardPhotos/foto3.jpg'
@@ -17,7 +18,7 @@ import square9 from '../assets/img/squaresCardPhotos/foto9.jpg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { toPng } from 'html-to-image';
-import html2canvas from 'html2canvas';
+
 
 /**
  * Inicializamos los datos del form
@@ -37,6 +38,17 @@ const initialFormData = {
     instagram: "",
     linkedin: "",
     twitter: "",
+    pinterest: "",
+    youtube: "",
+    reddit: "",
+    tiktok: "",
+    skype: "",
+    twitch: "",
+    github: "",
+    shopify: "",
+    etsy: "",
+    amazon: "",
+    snapchat: "",
     logo: ""
 };
 
@@ -230,40 +242,35 @@ function Card() {
         document.body.removeChild(element);
     }
 
-    /**
-    * Función descarga la vCard como imagen
-    */
-    const handleDownloadImage = () => {
-        const previewElement = document.querySelector('.card-preview');
-        const circleElement = document.querySelector('.circle');
-        const circlePhoto = document.querySelector('.circle-photo');
-        // Modificar las dimensiones del círculo
-        circleElement.style.width = '80px';
-        circleElement.style.height = '80px';
+    const [showUsername, setShowUsername] = useState({
+        facebook: false,
+        instagram: false,
+        linkedin: false,
+        twitter: false,
+        pinterest: false,
+        youtube: false,
+        reddit: false,
+        skype: false,
+        tiktok: false,
+        twitch: false,
 
-        // Modificar las dimensiones de la foto del círculo
-        circlePhoto.style.width = '100%';
-        circlePhoto.style.height = '120%';
-        circlePhoto.style.objectFit = 'cover';
-        
 
-        html2canvas(previewElement, { scale: 3 }).then((canvas) => {
-            const image = canvas.toDataURL('image/png');
-            const link = document.createElement('a');
-            link.href = image;
-            link.download = 'vCard.png';
-            link.click();
-
-            // Restaurar las dimensiones originales del círculo 
-            circleElement.style.width = '80px';
-            circleElement.style.height = '80px';
-
-            // Restaurar las dimensiones originales de la foto del círculo
-            circlePhoto.style.width = '100%';
-            circlePhoto.style.height = '100%';
-            circlePhoto.style.objectFit = 'cover';
-
-        });
+    });
+    const handleIconClick = (socialNetwork, showField = true) => {
+        setShowUsername(prevState => ({
+            ...prevState,
+            [socialNetwork]: showField
+        }));
+    };
+    const handleRemoveClick = (socialNetwork) => {
+        setShowUsername(prevState => ({
+            ...prevState,
+            [socialNetwork]: false,
+        }));
+        setFormData(prevFormData => ({
+            ...prevFormData,
+            [socialNetwork]: "",
+        }));
     };
 
 
@@ -450,45 +457,399 @@ function Card() {
                             <button class="form-toggle-button" style={{ background: 'white' }}>{showSocialNetwork ? <FaMinus /> : <FaPlus />}</button>
                         </div>
                         {showSocialNetwork && (
-                            <div class="form-container">
-                                <div className="social-container">
-                                    <div className="social-media-card">
-                                        <div className="social-media-icon">
-                                            <FaFacebook />
+                            <div>
+                                <div className="form-container">
+                                    <div className="social-container">
+                                        <div className="social-media-card">
+                                            <div className="social-media-icon" onClick={() => handleIconClick('facebook')}>
+                                                <FaFacebook />
+                                            </div>
                                         </div>
-                                        <div className="social-media-info">
-                                            <h3 className="social-media-name">Facebook</h3>
-                                            <input type='text' name="facebook" id="facebook" onChange={handleChange} value={formData.facebook} className="social-media-handle" placeholder="Username" />
+                                        <div className="social-media-card">
+                                            <div className="social-media-icon" onClick={() => handleIconClick('instagram')}>
+                                                <FaInstagram />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="social-media-card">
-                                        <div className="social-media-icon">
-                                            <FaInstagram />
+                                        <div className="social-media-card">
+                                            <div className="social-media-icon" onClick={() => handleIconClick('linkedin')}>
+                                                <FaLinkedin />
+                                            </div>
                                         </div>
-                                        <div className="social-media-info">
-                                            <h3 className="social-media-name">Instagram</h3>
-                                            <input type='text' name="instagram" id="instagram" onChange={handleChange} value={formData.instagram} className="social-media-handle" placeholder="Username" />
+                                        <div className="social-media-card">
+                                            <div className="social-media-icon" onClick={() => handleIconClick('twitter')}>
+                                                <FaTwitter />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="social-media-card">
-                                        <div className="social-media-icon">
-                                            <FaLinkedin />
+                                        <div className="social-media-card">
+                                            <div className="social-media-icon" onClick={() => handleIconClick('pinterest')}>
+                                                <FaPinterest />
+                                            </div>
                                         </div>
-                                        <div className="social-media-info">
-                                            <h3 className="social-media-name">LinkedIn</h3>
-                                            <input type='text' name="linkedin" id="linkedin" onChange={handleChange} value={formData.linkedin} className="social-media-handle" placeholder="Username" />
+                                        <div className="social-media-card">
+                                            <div className="social-media-icon" onClick={() => handleIconClick('youtube')}>
+                                                <FaYoutube />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="social-media-card">
-                                        <div className="social-media-icon">
-                                            <FaTwitter />
+                                        <div className="social-media-card">
+                                            <div className="social-media-icon" onClick={() => handleIconClick('reddit')}>
+                                                <FaReddit />
+                                            </div>
                                         </div>
-                                        <div className="social-media-info">
-                                            <h3 className="social-media-name">Twitter</h3>
-                                            <input type='text' name="twitter" id="twitter" onChange={handleChange} value={formData.twitter} className="social-media-handle" placeholder="Username" />
+                                        <div className="social-media-card">
+                                            <div className="social-media-icon" onClick={() => handleIconClick('skype')}>
+                                                <FaSkype />
+                                            </div>
+                                        </div>
+                                        <div className="social-media-card">
+                                            <div className="social-media-icon" onClick={() => handleIconClick('tiktok')}>
+                                                <FaTiktok />
+                                            </div>
+                                        </div>
+                                        <div className="social-media-card">
+                                            <div className="social-media-icon" onClick={() => handleIconClick('twitch')}>
+                                                <FaTwitch />
+                                            </div>
+                                        </div>
+                                        <div className="social-media-card">
+                                            <div className="social-media-icon" onClick={() => handleIconClick('github')}>
+                                                <FaGithub />
+                                            </div>
+                                        </div>
+                                        <div className="social-media-card">
+                                            <div className="social-media-icon" onClick={() => handleIconClick('shopify')}>
+                                                <FaShopify />
+                                            </div>
+                                        </div>
+                                        <div className="social-media-card">
+                                            <div className="social-media-icon" onClick={() => handleIconClick('etsy')}>
+                                                <FaEtsy />
+                                            </div>
+                                        </div>
+                                        <div className="social-media-card">
+                                            <div className="social-media-icon" onClick={() => handleIconClick('amazon')}>
+                                                <FaAmazon />
+                                            </div>
+                                        </div>
+                                        <div className="social-media-card">
+                                            <div className="social-media-icon" onClick={() => handleIconClick('snapchat')}>
+                                                <FaSnapchat />
+                                            </div>
+                                        </div>
+                                        <div className="social-media-card">
+                                            <div className="social-media-icon" onClick={() => handleIconClick('ubereats')}>
+                                                <SiUbereats />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                {showUsername.facebook && (
+                                    <div>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Facebook username </p>
+                                        <div className="input-row">
+                                            <input
+                                                type="text"
+                                                name="facebook"
+                                                id="facebook"
+                                                onChange={handleChange}
+                                                value={formData.facebook}
+                                                className="social-media-handle"
+                                                placeholder="Username"
+                                            />
+                                            <button className="remove-button" onClick={() => handleRemoveClick('facebook')}>
+                                                <FaTrash />
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {showUsername.instagram && (
+                                    <div>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Instagram username </p>
+                                        <div className="input-row">
+                                            <input
+                                                type="text"
+                                                name="instagram"
+                                                id="instagram"
+                                                onChange={handleChange}
+                                                value={formData.instagram}
+                                                className="social-media-handle"
+                                                placeholder="Username"
+                                            />
+                                            <button className="remove-button" onClick={() => handleRemoveClick('instagram')}>
+                                                <FaTrash />
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {showUsername.linkedin && (
+                                    <div>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Linkedin username </p>
+                                        <div className="input-row">
+                                            <input
+                                                type="text"
+                                                name="linkedin"
+                                                id="linkedin"
+                                                onChange={handleChange}
+                                                value={formData.linkedin}
+                                                className="social-media-handle"
+                                                placeholder="Username"
+                                            />
+                                            <button className="remove-button" onClick={() => handleRemoveClick('linkedin')}>
+                                                <FaTrash />
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {showUsername.twitter && (
+                                    <div>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Twitter username </p>
+                                        <div className="input-row">
+                                            <input
+                                                type="text"
+                                                name="twitter"
+                                                id="twitter"
+                                                onChange={handleChange}
+                                                value={formData.twitter}
+                                                className="social-media-handle"
+                                                placeholder="Username"
+                                            />
+                                            <button className="remove-button" onClick={() => handleRemoveClick('twitter')}>
+                                                <FaTrash />
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {showUsername.pinterest && (
+                                    <div>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Pinterest username </p>
+                                        <div className="input-row">
+                                            <input
+                                                type="text"
+                                                name="pinterest"
+                                                id="pinterest"
+                                                onChange={handleChange}
+                                                value={formData.pinterest}
+                                                className="social-media-handle"
+                                                placeholder="Username"
+                                            />
+                                            <button className="remove-button" onClick={() => handleRemoveClick('pinterest')}>
+                                                <FaTrash />
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+                                {showUsername.youtube && (
+                                    <div>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Youtube username </p>
+                                        <div className="input-row">
+                                            <input
+                                                type="text"
+                                                name="youtube"
+                                                id="youtube"
+                                                onChange={handleChange}
+                                                value={formData.youtube}
+                                                className="social-media-handle"
+                                                placeholder="Username"
+                                            />
+                                            <button className="remove-button" onClick={() => handleRemoveClick('youtube')}>
+                                                <FaTrash />
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+                                {showUsername.reddit && (
+                                    <div>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Reddit username </p>
+                                        <div className="input-row">
+                                            <input
+                                                type="text"
+                                                name="reddit"
+                                                id="reddit"
+                                                onChange={handleChange}
+                                                value={formData.reddit}
+                                                className="social-media-handle"
+                                                placeholder="Username"
+                                            />
+                                            <button className="remove-button" onClick={() => handleRemoveClick('reddit')}>
+                                                <FaTrash />
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+                                {showUsername.skype && (
+                                    <div>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Skype username </p>
+                                        <div className="input-row">
+                                            <input
+                                                type="text"
+                                                name="skype"
+                                                id="skype"
+                                                onChange={handleChange}
+                                                value={formData.skype}
+                                                className="social-media-handle"
+                                                placeholder="Username"
+                                            />
+                                            <button className="remove-button" onClick={() => handleRemoveClick('skype')}>
+                                                <FaTrash />
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+                                {showUsername.tiktok && (
+                                    <div>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Tiktok username </p>
+                                        <div className="input-row">
+                                            <input
+                                                type="text"
+                                                name="tiktok"
+                                                id="tiktok"
+                                                onChange={handleChange}
+                                                value={formData.tiktok}
+                                                className="social-media-handle"
+                                                placeholder="Username"
+                                            />
+                                            <button className="remove-button" onClick={() => handleRemoveClick('tiktok')}>
+                                                <FaTrash />
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+                                {showUsername.twitch && (
+                                    <div>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Twitch username </p>
+                                        <div className="input-row">
+                                            <input
+                                                type="text"
+                                                name="twitch"
+                                                id="twitch"
+                                                onChange={handleChange}
+                                                value={formData.twitch}
+                                                className="social-media-handle"
+                                                placeholder="Username"
+                                            />
+                                            <button className="remove-button" onClick={() => handleRemoveClick('twitch')}>
+                                                <FaTrash />
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+                                {showUsername.github && (
+                                    <div>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Github username </p>
+                                        <div className="input-row">
+                                            <input
+                                                type="text"
+                                                name="github"
+                                                id="github"
+                                                onChange={handleChange}
+                                                value={formData.github}
+                                                className="social-media-handle"
+                                                placeholder="Username"
+                                            />
+                                            <button className="remove-button" onClick={() => handleRemoveClick('github')}>
+                                                <FaTrash />
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+                                {showUsername.shopify && (
+                                    <div>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Shopify username </p>
+                                        <div className="input-row">
+                                            <input
+                                                type="text"
+                                                name="shopify"
+                                                id="shopify"
+                                                onChange={handleChange}
+                                                value={formData.shopify}
+                                                className="social-media-handle"
+                                                placeholder="Username"
+                                            />
+                                            <button className="remove-button" onClick={() => handleRemoveClick('shopify')}>
+                                                <FaTrash />
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+                                {showUsername.etsy && (
+                                    <div>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Etsy username </p>
+                                        <div className="input-row">
+                                            <input
+                                                type="text"
+                                                name="etsy"
+                                                id="etsy"
+                                                onChange={handleChange}
+                                                value={formData.etsy}
+                                                className="social-media-handle"
+                                                placeholder="Username"
+                                            />
+                                            <button className="remove-button" onClick={() => handleRemoveClick('etsy')}>
+                                                <FaTrash />
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+                                {showUsername.amazon && (
+                                    <div>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Amazon username </p>
+                                        <div className="input-row">
+                                            <input
+                                                type="text"
+                                                name="amazon"
+                                                id="amazon"
+                                                onChange={handleChange}
+                                                value={formData.amazon}
+                                                className="social-media-handle"
+                                                placeholder="Username"
+                                            />
+                                            <button className="remove-button" onClick={() => handleRemoveClick('amazon')}>
+                                                <FaTrash />
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+                                {showUsername.snapchat && (
+                                    <div>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Snapchat username </p>
+                                        <div className="input-row">
+                                            <input
+                                                type="text"
+                                                name="snapchat"
+                                                id="snapchat"
+                                                onChange={handleChange}
+                                                value={formData.snapchat}
+                                                className="social-media-handle"
+                                                placeholder="Username"
+                                            />
+                                            <button className="remove-button" onClick={() => handleRemoveClick('snapchat')}>
+                                                <FaTrash />
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+                                {showUsername.ubereats && (
+                                    <div>
+                                        <p className="social-media-name" style={{ fontFamily: 'Poppins-light', fontSize: 12, marginLeft: 322, marginBottom: -20 }}>Enter your Uber Eats username </p>
+                                        <div className="input-row">
+                                            <input
+                                                type="text"
+                                                name="ubereats"
+                                                id="ubereats"
+                                                onChange={handleChange}
+                                                value={formData.ubereats}
+                                                className="social-media-handle"
+                                                placeholder="Username"
+                                            />
+                                            <button className="remove-button" onClick={() => handleRemoveClick('ubereats')}>
+                                                <FaTrash />
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         )}
                     </div>
@@ -496,74 +857,252 @@ function Card() {
                         <div className="col-12 col-md-6">
                             <div className="preview" style={{ maxHeight: '700px', overflowY: 'auto', marginBottom: '30px' }}>
                                 <h2 style={{ fontFamily: 'Poppins', marginTop: -7.5, marginBottom: 22 }}>Card Preview</h2>
-                                <div className="card-preview">
-                                    <div className='image-card' style={{ width: 400, backgroundColor: '#fecc00', backgroundImage: backgroundImage, height: 200, borderTopLeftRadius: 12, borderTopRightRadius: 12, backgroundSize: 'cover', zIndex: 1, marginBottom: -10 }}>
-                                        <div className='circle'>
-                                            {photoDataURL ? (
-                                                <img
-                                                    className="circle-photo"
-                                                    alt=""
-                                                    src={photoDataURL}
-                                                    style={{
-                                                        borderRadius: '50%',
-                                                        fontFamily: 'Poppins-light',
-                                                        marginTop: 155,
-                                                        marginLeft: 160,
-                                                        border: 'solid 5px white'
-                                                    }}
-                                                />
-                                            ) : (
-                                                <div style={{ width: '100%', height: '100%', borderRadius: '50%' }}></div>
-                                            )}
-                                        </div>
-                                    </div>
-                                    <div className="card " style={{ backgroundColor: backgroundColor }}>
-                                        <div className="card-body">
-                                            <div className="row">
-                                                <div className="col">
-                                                    <div className='square' style={{ width: '150px', height: '150px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginLeft: 95 }}>
-                                                        <img className="square-logo" src={formData.logo} alt=' ' style={{ objectFit: 'cover', width: '100%', height: '100%', marginInline: '50%', }} />
+                                <div className="container" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                    <div className='phone-preview'>
+                                        <div className='phone-preview-bg'>
+                                            <div className='item-container' >
+                                                <div className='item-header'>
+                                                    <div className='' style={{ backgroundColor: '#fecc00', width: '230px', height: 126, backgroundImage: backgroundImage, backgroundSize: 'cover' }}>
+                                                        <div className="px-0 w-100">
+                                                            <div className="text-center card-wrapper">
+                                                                <div className="img-wrap">
+
+                                                                    {photoDataURL ? (
+                                                                        <div className='circle' >
+                                                                            <img
+                                                                                className="circle-photo"
+                                                                                alt=""
+                                                                                src={photoDataURL}
+                                                                                style={{
+                                                                                    borderRadius: '50%',
+                                                                                    fontFamily: 'Poppins-light',
+                                                                                    border: 'solid 3px white'
+                                                                                }}
+                                                                            />
+                                                                        </div>
+                                                                    ) : (
+                                                                        <div className='img-wrap'>
+                                                                            <img className="img-body" style={{ backgroundImage: 'url(https://e7.pngegg.com/pngimages/323/705/png-clipart-user-profile-get-em-cardiovascular-disease-zingah-avatar-miscellaneous-white.png)', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }} />
+                                                                        </div>
+                                                                    )}
+                                                                </div>
+                                                                <div className="p-0 card2-body">
+                                                                    <h6 className="text-white card2-title"> </h6>
+                                                                    <div className="mb-2 text-white card2-subtitle"></div>
+                                                                </div>
+                                                                <div className="vcard-functions" style={{ backgroundColor: backgroundColor, color: textColor }}>
+                                                                    <div className="vcard-functions-wrapper" style={{ backgroundColor: backgroundColor, color: textColor }}>
+                                                                        <a href={`tel:${formData.phone}`} style={{ color: textColor }}>
+                                                                            <FaPhone className="qr-phone-call mr-1" />
+                                                                            <small className="dynamicText" style={{ backgroundColor: backgroundColor, color: textColor }}>Phone</small>
+                                                                        </a>
+                                                                        <a target="_blank" rel="noreferrer" style={{ color: textColor }}>
+                                                                            <FaEnvelope className="qr-email1 mr-1" />
+                                                                            <small className="dynamicText" style={{ backgroundColor: backgroundColor, color: textColor }}>Email</small>
+                                                                        </a>
+                                                                        <a href={`${formData.website}`} target="_blank" class="border-right-0" rel="noreferrer" style={{ color: textColor }}>
+                                                                            <FaGlobe className="qr-global mr-1" />
+                                                                            <small className="dynamicText" style={{ backgroundColor: backgroundColor, color: textColor }}>Website</small>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <h4 className="card-title" style={{ color: textColor }}>{formData.firstName} {formData.lastName}</h4>
-                                                    <h5 className="card-subtitle" style={{ color: textColor }}>{formData.title}</h5>
-                                                    <hr />
-                                                    {formData.email &&
-                                                        <p className="card-text" style={{ color: textColor }}><FaEnvelope></FaEnvelope> {formData.email}</p>
-                                                    }
-                                                    {formData.phone &&
-                                                        <p className="card-text" style={{ color: textColor }}><FaPhone></FaPhone> {formData.phone}</p>
-                                                    }
-                                                    {formData.address &&
-                                                        <p className="card-text" style={{ color: textColor }}><FaMapMarkerAlt></FaMapMarkerAlt> {formData.address}</p>
-                                                    }
-                                                    {formData.website &&
-                                                        <p className="card-text" style={{ color: textColor }}><FaGlobe></FaGlobe> {formData.website}</p>
-                                                    }
-                                                    {formData.company &&
-                                                        <p className="card-text" style={{ color: textColor }}><FaBuilding></FaBuilding> {formData.company}</p>
-                                                    }
-                                                    {formData.summary &&
-                                                        <p className="card-text" style={{ color: textColor }}><FaInfoCircle></FaInfoCircle> {formData.summary}</p>
-                                                    }
-                                                    {formData.facebook &&
-                                                        <p className="card-text" style={{ color: textColor }}><FaFacebook></FaFacebook> {formData.facebook}</p>
-                                                    }
-                                                    {formData.instagram &&
-                                                        <p className="card-text" style={{ color: textColor }}><FaInstagram></FaInstagram> {formData.instagram}</p>
-                                                    }
-                                                    {formData.linkedin &&
-                                                        <p className="card-text" style={{ color: textColor }}><FaLinkedin></FaLinkedin> {formData.linkedin}</p>
-                                                    }
-                                                    {formData.twitter &&
-                                                        <p className="card-text" style={{ color: textColor }}><FaTwitter></FaTwitter> {formData.twitter}</p>}
+                                                    <div className='item-body' style={{ marginTop: 10 }}>
+                                                        <div className="details-row w-100">
+                                                            <small className="d-block text-center" >Personal description</small>
+                                                        </div>
+                                                        <div className="details-row w-100" style={{ backgroundColor: '#f8f8f8' }}>
+                                                            <a className="details-info" >
+                                                                <div>
+                                                                    <small> Name:</small>
+                                                                    <p style={{ fontFamily: 'Poppins-light' }}>{formData.firstName} {formData.lastName}</p>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <div className="details-row w-100" style={{ backgroundColor: '#f8f8f8' }}>
+                                                            <div className="details-info">
+                                                                <FaEnvelope className="qr-phone-call mr-3" />
+                                                                <div>
+                                                                    <small> Email:</small>
+                                                                    <p style={{ fontFamily: 'Poppins-light' }}>{formData.email}</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="details-row w-100" style={{ backgroundColor: '#f8f8f8' }}>
+                                                            <div className="details-info" >
+                                                                <FaPhone className="qr-phone-call mr-3" />
+                                                                <div>
+                                                                    <small> Phone:</small>
+                                                                    <p style={{ fontFamily: 'Poppins-light' }}>{formData.phone}</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="details-row w-100" style={{ backgroundColor: '#f8f8f8' }}>
+                                                            <div className="details-info">
+                                                                <FaMapMarkerAlt className="qr-phone-call mr-3" />
+                                                                <div>
+                                                                    <small>Adress:</small>
+                                                                    <p style={{ fontFamily: 'Poppins-light' }}>{formData.address}</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="details-row w-100" style={{ backgroundColor: '#f8f8f8' }}>
+                                                            <div className="details-info">
+                                                                <FaGlobe className="qr-phone-call mr-3" />
+                                                                <div>
+                                                                    <small>Website</small>
+                                                                    <p style={{ fontFamily: 'Poppins-light' }}>{formData.website}</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="details-row w-100" style={{ backgroundColor: '#f8f8f8' }}>
+                                                            <div className="details-info" >
+                                                                <FaBuilding className="qr-phone-call mr-3" />
+                                                                <div>
+                                                                    <small >Company</small>
+                                                                    <p style={{ fontFamily: 'Poppins-light' }}>{formData.company}</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="details-row w-100" style={{ backgroundColor: '#f8f8f8' }}>
+                                                            <div className="details-info" >
+                                                                <FaInfoCircle className="qr-phone-call mr-3" />
+                                                                <div>
+                                                                    <small>Summary</small>
+                                                                    <p style={{ fontFamily: 'Poppins-light' }}>{formData.summary}</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="details-row w-100">
+                                                            <small className="d-block text-center" >Social media</small>
+                                                        </div>
+                                                        <div className="details-row w-100" style={{ backgroundColor: '#f8f8f8' }}>
+                                                            <div className="social-icons-container" style={{ display: 'flex', flexWrap: 'wrap' }}>
+                                                                <div className="social-icon-wrapper">
+                                                                    {formData.facebook && (
+                                                                        <a href={`https://www.facebook.com/${formData.facebook}`} target="_blank" rel="noopener noreferrer">
+                                                                            <FaFacebook className="social-icon" />
+                                                                        </a>
+                                                                    )}
+                                                                </div>
+                                                                <div className="social-icon-wrapper">
+                                                                    {formData.instagram && (
+                                                                        <a href={`https://www.instagram.com/${formData.instagram}`} target="_blank" rel="noopener noreferrer">
+                                                                            <FaInstagram className="social-icon" />
+                                                                        </a>
+                                                                    )}
+                                                                </div>
+                                                                <div className="social-icon-wrapper">
+                                                                    {formData.linkedin && (
+                                                                        <a href={`https://www.linkedin.com/${formData.linkedin}`} target="_blank" rel="noopener noreferrer">
+                                                                            <FaLinkedin className="social-icon" />
+                                                                        </a>
+                                                                    )}
+                                                                </div>
+                                                                <div className="social-icon-wrapper">
+                                                                    {formData.twitter && (
+                                                                        <a href={`https://www.twitter.com/${formData.twitter}`} target="_blank" rel="noopener noreferrer">
+                                                                            <FaTwitter className="social-icon" />
+                                                                        </a>
+                                                                    )}
+                                                                </div>
+                                                                <div className="social-icon-wrapper">
+                                                                    {formData.pinterest && (
+                                                                        <a href={`https://www.pinterest.com/${formData.pinterest}`} target="_blank" rel="noopener noreferrer">
+                                                                            <FaPinterest className="social-icon" />
+                                                                        </a>
+                                                                    )}
+                                                                </div>
+                                                                <div className="social-icon-wrapper">
+                                                                    {formData.youtube && (
+                                                                        <a href={`https://www.youtube.com/@${formData.youtube}`} target="_blank" rel="noopener noreferrer">
+                                                                            <FaYoutube className="social-icon" />
+                                                                        </a>
+                                                                    )}
+                                                                </div>
+                                                                <div className="social-icon-wrapper">
+                                                                    {formData.reddit && (
+                                                                        <a href={`https://www.reddit.com/${formData.reddit}`} target="_blank" rel="noopener noreferrer">
+                                                                            <FaReddit className="social-icon" />
+                                                                        </a>
+                                                                    )}
+                                                                </div>
+                                                                <div className="social-icon-wrapper">
+                                                                    {formData.skype && (
+                                                                        <a href={`https://www.skype.com/${formData.skype}`} target="_blank" rel="noopener noreferrer">
+                                                                            <FaSkype className="social-icon" />
+                                                                        </a>
+                                                                    )}
+                                                                </div>
+                                                                <div className="social-icon-wrapper">
+                                                                    {formData.tiktok && (
+                                                                        <a href={`https://www.tiktok.com/@${formData.tiktok}`} target="_blank" rel="noopener noreferrer">
+                                                                            <FaTiktok className="social-icon" />
+                                                                        </a>
+                                                                    )}
+                                                                </div>
+                                                                <div className="social-icon-wrapper">
+                                                                    {formData.twitch && (
+                                                                        <a href={`https://www.twitch.tv/${formData.twitch}`} target="_blank" rel="noopener noreferrer">
+                                                                            <FaTwitch className="social-icon" />
+                                                                        </a>
+                                                                    )}
+                                                                </div>
+                                                                <div className="social-icon-wrapper">
+                                                                    {formData.github && (
+                                                                        <a href={`https://www.github.com/${formData.github}`} target="_blank" rel="noopener noreferrer">
+                                                                            <FaGithub className="social-icon" />
+                                                                        </a>
+                                                                    )}
+                                                                </div>
+                                                                <div className="social-icon-wrapper">
+                                                                    {formData.shopify && (
+                                                                        <a target="_blank" rel="noopener noreferrer">
+                                                                            <FaShopify className="social-icon" />
+                                                                        </a>
+                                                                    )}
+                                                                </div>
+                                                                <div className="social-icon-wrapper">
+                                                                    {formData.etsy && (
+                                                                        <a target="_blank" rel="noopener noreferrer">
+                                                                            <FaEtsy className="social-icon" />
+                                                                        </a>
+                                                                    )}
+                                                                </div>
+                                                                <div className="social-icon-wrapper">
+                                                                    {formData.amazon && (
+                                                                        <a target="_blank" rel="noopener noreferrer">
+                                                                            <FaAmazon className="social-icon" />
+                                                                        </a>
+                                                                    )}
+                                                                </div>
+                                                                <div className="social-icon-wrapper">
+                                                                    {formData.snapchat && (
+                                                                        <a href={`https://www.snapchat.com/add/${formData.snapchat}?web_client_id=`} target="_blank" rel="noopener noreferrer">
+                                                                            <FaSnapchat className="social-icon" />
+                                                                        </a>
+                                                                    )}
+                                                                </div>
+                                                                <div className="social-icon-wrapper">
+                                                                    {formData.ubereats && (
+                                                                        <a target="_blank" rel="noopener noreferrer">
+                                                                            <SiUbereats className="social-icon" />
+                                                                        </a>
+                                                                    )}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="container" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                                         <div className="qr-code">
                                             <QRCode id="qr-code-container"
-                                                value={`BEGIN:VCARD\nVERSION:3.0\nFN;CHARSET=utf-8:${formData.firstName} ${formData.lastName}\nTEL:${formData.phone}\nADR:${formData.address}\nEMAIL:${formData.email}\nURL:${formData.website}\nPHOTO;ENCODING=BASE64;TYPE=JPEG:${photoDataURL}\nX-SOCIALPROFILE;type=facebook:${formData.facebook}\nX-SOCIALPROFILE;type=instagram:${formData.instagram}\nX-SOCIALPROFILE;type=linkedin:${formData.linkedin}\nX-SOCIALPROFILE;type=twitter:${formData.twitter}\nEND:VCARD`}
+                                                value={`BEGIN:VCARD\nVERSION:3.0\nFN;CHARSET=utf-8:${formData.firstName} ${formData.lastName}\nTEL:${formData.phone}\nADR:${formData.address}\nEMAIL:${formData.email}\nURL:${formData.website}\nNOTE:${formData.summary}\nPHOTO;ENCODING=BASE64;TYPE=JPEG:${photoDataURL}${formData.facebook ? `\nX-SOCIALPROFILE;type=facebook:${formData.facebook}` : ''}${formData.instagram ? `\nX-SOCIALPROFILE;type=instagram:${formData.instagram}` : ''}${formData.linkedin ? `\nX-SOCIALPROFILE;type=linkedin:${formData.linkedin}` : ''}${formData.twitter ? `\nX-SOCIALPROFILE;type=twitter:${formData.twitter}` : ''}\nEND:VCARD`}
                                             />
                                         </div>
                                     </div>
@@ -574,11 +1113,10 @@ function Card() {
                                     <button className="button-download" onClick={handleDownloadQRCode}>Download QR Code</button>
                                     <button className="button-download" onClick={downloadVCard}>Download vCard</button>
                                 </div>
-                                <button className="button-download" onClick={handleDownloadImage}>Download image</button>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div >
             </div >
             <Footer></Footer>
         </div >

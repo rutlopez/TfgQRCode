@@ -1230,14 +1230,10 @@ img {
 }
 
 .square {
-  margin-bottom: -20px;
-  margin-top: -10px;
-  width: 150px;
-  height: 150px;
+  width: 60px;
+  height: 70px;
   display: inherit;
-  align-items: center;
-  justify-content: center;
-  margin-left: 15px;
+  margin-left: 55px;
 }
 
 .circle {
@@ -1442,6 +1438,12 @@ img {
   margin-left: 79px;
 }
 
+.square {
+  width: 70px;
+  height: 64px;
+  margin-left: 2rem;
+}
+
 .square-logo,
 .circle-photo {
   width: 100%;
@@ -1491,7 +1493,6 @@ img {
   position: sticky;
   top: 0;
 }
-
 
 .vcard-functions-wrapper {
   display: flex;
@@ -1578,9 +1579,6 @@ img {
   text-decoration: none;
 }
 
-
-
-
 .vCard-socials {
   background: #fff;
   border-radius: 4px;
@@ -1644,7 +1642,6 @@ img {
     flex: 0 0 auto;
   }
 }
-
 
 .nav-outer {
   margin: 0 24px;

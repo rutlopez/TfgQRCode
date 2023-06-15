@@ -2,6 +2,7 @@ import React from 'react';
 import { TiSocialLinkedin, TiSocialTwitter, TiSocialInstagram, TiSocialGithub } from 'react-icons/ti';
 import { RiSendPlaneFill } from 'react-icons/ri';
 
+/* Sección del footer */
 function Footer() {
   return (
     <div style={{ marginTop: 100 }} className='footer'>

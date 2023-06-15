@@ -1,10 +1,11 @@
 import React from "react";
-import { AiOutlineHome, AiOutlineQuestionCircle} from "react-icons/ai";
+import { AiOutlineHome, AiOutlineQuestionCircle } from "react-icons/ai";
 import { BsFillBookmarkStarFill } from 'react-icons/bs';
 import { FaArrowRight } from 'react-icons/fa';
 import { IoIdCard } from 'react-icons/io5';
 import { useState } from "react";
 
+/* Navbar de abajo, donde están las distintas secciones del home para clicar */
 const Navbar2 = () => {
     const [activeNav, setActiveNav] = useState("#");
 

@@ -1,10 +1,15 @@
-import React, { useEffect} from 'react';
+import React, { useEffect } from 'react';
 import heroImg from '../assets/img/hero.jpg'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+/* Sección primera del Home (hero)*/
 function Hero() {
+
+    /**
+     * Efectos visuales
+   */
     useEffect(() => {
         AOS.init({
             duration: 2000,
@@ -18,7 +23,7 @@ function Hero() {
      */
     const [text] = useTypewriter({
         words: ["Make it easy for customers to contact you with a custom QR code business card.",
-                "Enter your information and we'll generate a QR code image that you can use to print your own professional business cards."],
+            "Enter your information and we'll generate a QR code image that you can use to print your own professional business cards."],
         loop: true,
         typeSpeed: 20,
         deleteSpeed: 10,

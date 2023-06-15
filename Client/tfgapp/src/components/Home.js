@@ -9,8 +9,7 @@ import ExamplesCards from './ExamplesCards';
 import Promotion from './Promotion';
 import Faq from './Faq';
 
-
-
+/* Home */
 const Home = () => {
   return (
     <div>

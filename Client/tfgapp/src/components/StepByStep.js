@@ -8,12 +8,15 @@ import step5 from '../assets/img/stepbystep/step5.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+/* Sección de paso a paso del Home */
 const StepByStep = () => {
+
   useEffect(() => {
-    // Lógica o efectos secundarios que requieran 'steps'
   }, []);
 
-  // Array con los pasos del proceso y sus descripciones
+  /**
+   * Array con los pasos del proceso y sus descripciones
+   */
   const steps = [
     {
       title: 'Step 1: Fill in your information',
@@ -42,6 +45,9 @@ const StepByStep = () => {
     },
   ];
 
+  /**
+   * Efectos visuales
+  */
   useEffect(() => {
     AOS.init({
       duration: 2700,

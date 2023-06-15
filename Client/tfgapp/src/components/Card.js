@@ -5,7 +5,6 @@ import { SketchPicker } from 'react-color';
 import Header from './NavBar';
 import { FaEnvelope, FaMapMarkerAlt, FaTrash, FaPhone, FaGlobe, FaBuilding, FaInfoCircle, FaPlus, FaMinus, FaCloudUploadAlt, FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaPinterest, FaYoutube, FaReddit, FaSkype, FaTiktok, FaTwitch, FaGithub, FaShopify, FaEtsy, FaAmazon, FaSnapchat } from 'react-icons/fa';
 import { SiUbereats } from 'react-icons/si';
-
 import square1 from '../assets/img/squaresCardPhotos/foto1.png'
 import square2 from '../assets/img/squaresCardPhotos/foto2.jpg'
 import square3 from '../assets/img/squaresCardPhotos/foto3.jpg'
@@ -49,7 +48,7 @@ const initialFormData = {
     etsy: "",
     amazon: "",
     snapchat: "",
-    ubereats:"",
+    ubereats: "",
     logo: ""
 };
 
@@ -243,6 +242,9 @@ function Card() {
         document.body.removeChild(element);
     }
 
+    /**
+    *  Constante que recoge las redes sociales 
+    */
     const [showUsername, setShowUsername] = useState({
         facebook: false,
         instagram: false,
@@ -257,12 +259,18 @@ function Card() {
 
 
     });
+    /**
+    *  Función que se encarga de abrir el input de la red social clicada para añadir el perfil 
+    */
     const handleIconClick = (socialNetwork, showField = true) => {
         setShowUsername(prevState => ({
             ...prevState,
             [socialNetwork]: showField
         }));
     };
+    /**
+    *  Función que se encarga quitar el input de la red social clicada 
+    */
     const handleRemoveClick = (socialNetwork) => {
         setShowUsername(prevState => ({
             ...prevState,
@@ -274,7 +282,9 @@ function Card() {
         }));
     };
 
-
+    /**
+    *  Efectos visuales  
+    */
     useEffect(() => {
         AOS.init({
             duration: 2000,
@@ -292,8 +302,10 @@ function Card() {
                     </h2>
                     <hr className='titulo-page' style={{ border: 'none', backgroundColor: '#FFC300', height: '2px', borderRadius: '2px', margin: 0, position: 'absolute', bottom: '-10px', left: 0, }} />
                 </div>
+                {/* Columna de la izquierda */}
                 <div className="row">
                     <div className="col-6">
+                        {/* General Info section (formulario) */}
                         <div className="form">
                             <div class="form-toggle" data-aos="fade-right" onClick={toggleForm}>
                                 <h2 class="form-toggle-text" data-aos="fade-right">General information </h2>
@@ -344,6 +356,7 @@ function Card() {
                                 </div>
                             )}
                         </div>
+                        {/* Design and customize section (diseño de la tarjeta) */}
                         <div class="form-toggle" data-aos="fade-right" onClick={toggleDesign}>
                             <h2 class="form-toggle-text" data-aos="fade-right">Design and customize</h2>
                             <button class="form-toggle-button" style={{ background: 'white' }}>{showDesign ? <FaMinus /> : <FaPlus />}</button>
@@ -453,6 +466,7 @@ function Card() {
                                 </div>
                             </div>
                         )}
+                        {/*Social networks section (redes sociales) */}
                         <div class="form-toggle" data-aos="fade-right" onClick={toggleSocialNetwork}>
                             <h2 class="form-toggle-text" data-aos="fade-right" >Social Networks</h2>
                             <button class="form-toggle-button" style={{ background: 'white' }}>{showSocialNetwork ? <FaMinus /> : <FaPlus />}</button>
@@ -543,6 +557,7 @@ function Card() {
                                         </div>
                                     </div>
                                 </div>
+                                {/*iconos de redes sociales a elegir por el usuario */}
                                 {showUsername.facebook && (
                                     <div style={{
                                         display: 'flex',
@@ -921,6 +936,7 @@ function Card() {
                             </div>
                         )}
                     </div>
+                    {/* Columna de la derecha (preview) */}
                     <div className='row'>
                         <div className="col-12 col-md-6">
                             <div className="preview" style={{ maxHeight: '700px', overflowY: 'auto', marginBottom: '30px' }}>
@@ -1057,6 +1073,8 @@ function Card() {
                                                         <div className="details-row w-100">
                                                             <small className="d-block text-center" >Social media</small>
                                                         </div>
+                                                        {/* Aquí saldran los iconos seleccionados por 
+                                                         el usuario en la sección de social networks */}
                                                         <div className="details-row w-100" style={{ backgroundColor: '#f8f8f8' }}>
                                                             <div className="social-icons-container" style={{ display: 'flex', flexWrap: 'wrap' }}>
                                                                 <div className="social-icon-wrapper">
@@ -1179,6 +1197,7 @@ function Card() {
                                                 </div>
                                             </div>
                                         </div>
+                                        {/*Código QR */}
                                         <div className="qr-code">
                                             <QRCode id="qr-code-container"
                                                 value={`BEGIN:VCARD\nVERSION:3.0\nFN;CHARSET=utf-8:${formData.firstName} ${formData.lastName}\nTEL:${formData.phone}\nADR:${formData.address}\nEMAIL:${formData.email}\nURL:${formData.website}\nNOTE:${formData.summary}\nPHOTO;ENCODING=BASE64;TYPE=JPEG:${photoDataURL}${formData.facebook ? `\nX-SOCIALPROFILE;type=facebook:${formData.facebook}` : ''}${formData.instagram ? `\nX-SOCIALPROFILE;type=instagram:${formData.instagram}` : ''}${formData.linkedin ? `\nX-SOCIALPROFILE;type=linkedin:${formData.linkedin}` : ''}${formData.twitter ? `\nX-SOCIALPROFILE;type=twitter:${formData.twitter}` : ''}${formData.pinterest ? `\nX-SOCIALPROFILE;type=pinterest:${formData.pinterest}` : ''}${formData.youtube ? `\nX-SOCIALPROFILE;type=youtube:${formData.youtube}` : ''}${formData.reddit ? `\nX-SOCIALPROFILE;type=reddit:${formData.reddit}` : ''}${formData.skype ? `\nX-SOCIALPROFILE;type=skype:${formData.skype}` : ''}${formData.tiktok ? `\nX-SOCIALPROFILE;type=tiktok:${formData.tiktok}` : ''}${formData.twitch ? `\nX-SOCIALPROFILE;type=twitch:${formData.twitch}` : ''}${formData.github ? `\nX-SOCIALPROFILE;type=github:${formData.github}` : ''}${formData.shopify ? `\nX-SOCIALPROFILE;type=shopify:${formData.shopify}` : ''}${formData.etsy ? `\nX-SOCIALPROFILE;type=etsy:${formData.etsy}` : ''}${formData.amazon ? `\nX-SOCIALPROFILE;type=amazon:${formData.amazon}` : ''}${formData.snapchat ? `\nX-SOCIALPROFILE;type=snapchat:${formData.snapchat}` : ''}${formData.ubereats ? `\nX-SOCIALPROFILE;type=ubereats:${formData.ubereats}` : ''}\nEND:VCARD`}
@@ -1187,6 +1206,7 @@ function Card() {
                                     </div>
                                 </div>
                             </div>
+                            {/* Botones de descarga */}
                             <div className="button-container">
                                 <div className="button-row">
                                     <button className="button-download" onClick={handleDownloadQRCode}>Download QR Code</button>

@@ -7,6 +7,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 function ExamplesCards() {
+
+  /**
+   * Efectos visuales
+  */
   useEffect(() => {
     AOS.init({
       duration: 2500,
@@ -15,6 +19,7 @@ function ExamplesCards() {
 
   return (
     <>
+     {/* Sección de tarjetas de ejemplo (example cards)*/}
       <section className='examples' id='examples'>
         <div className='container-examples'>
           <div

@@ -6,7 +6,12 @@ import featureImg from '../assets/img/features/moviles.png'
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+/* Sección de características (features) */
 function Features() {
+
+    /**
+     * Efectos visuales 
+   */
     useEffect(() => {
         AOS.init({
             duration: 2000,

@@ -1,5 +1,5 @@
 import React from 'react';
-
+/* Sección de la curva amarilla de abajo del Home (Promotion)*/
 const Promotion = () => {
   return (
     <div

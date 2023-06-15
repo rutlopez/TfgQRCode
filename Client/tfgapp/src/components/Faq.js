@@ -4,6 +4,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Faq = () => {
+  
+  /**
+   * tabla de datos de la sección de preguntas frecuentes
+  */
   const faqItems = [
     {
       question: 'Can I customize the design of my business card?',
@@ -23,12 +27,18 @@ const Faq = () => {
     },
   ];
 
+  /**
+    * Efectos visuales  
+  */
   useEffect(() => {
     AOS.init({
       duration: 2500,
     });
   }, []);
 
+  /**
+   * Función que de expandir o recoger la pregunta 
+   */
   const [expandedIndex, setExpandedIndex] = useState(null);
 
   const handleQuestionClick = (index) => {
@@ -41,6 +51,7 @@ const Faq = () => {
 
   return (
     <section className='faq' id='faq'>
+      {/* Sección de preguntas frecuentes */}
       <div style={{ paddingBottom: 100 }} data-aos="fade-up" className="faq-section">
         <AiOutlineQuestionCircle size={35} style={{ marginLeft: '50%' }} color='#fecc00' className="faq-icon" />
         <h2 className="faq-heading">Frequently Asked Questions</h2>

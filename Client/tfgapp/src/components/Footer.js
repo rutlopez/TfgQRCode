@@ -1,8 +1,13 @@
+/**
+ * @fileoverview Creación de la sección del footer
+ * @version 1.0
+ * @author Rut Yela
+ * @copyright rut.yela.lopez@gmail.com
+ */
 import React from 'react';
 import { TiSocialLinkedin, TiSocialTwitter, TiSocialInstagram, TiSocialGithub } from 'react-icons/ti';
 import { RiSendPlaneFill } from 'react-icons/ri';
 
-/* Sección del footer */
 function Footer() {
   return (
     <div style={{ marginTop: 100 }} className='footer'>

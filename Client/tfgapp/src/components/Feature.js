@@ -1,14 +1,20 @@
+/**
+ * @fileoverview Crea los textos con sus iconos de las características
+ * @version 1.0
+ * @author Rut Yela
+ * @copyright rut.yela.lopez@gmail.com
+ */
 import React from 'react'
 import { BsHexagon } from 'react-icons/bs';
 
-/* Sección de características (features) */
+/**
+ *Recogemos los datos de la tabla de data.js
+ * @param {*} props
+ * @return {*} 
+ */
 const Feature = (props) => {
-  /**
-   * Recogemos los datos de la tabla featureList de data.js (son los props)
-  */
   return (
     <div className='feature'>
-
       <div className='feature-icon'>
         <BsHexagon color='#fecc00' size={55} />
         <div className='inner-icon'>

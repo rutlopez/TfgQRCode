@@ -1,3 +1,10 @@
+/**
+ * @fileoverview Toda la creación de las tarjetas de visita, con el formulario, diseño de 
+ * plantillas, sección de redes sociales y vista previa con el código QR y botones de descarga.
+ * @version 1.0
+ * @author Rut Yela
+ * @copyright rut.yela.lopez@gmail.com
+ */
 import React, { useState, useEffect } from 'react';
 import QRCode from "react-qr-code";
 import Footer from './Footer';
@@ -18,9 +25,35 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { toPng } from 'html-to-image';
 
-
 /**
- * Inicializamos los datos del form
+ * @typedef {Object} FormData
+ * @property {string} firstName - The first name.
+ * @property {string} lastName - The last name.
+ * @property {string} title - The title.
+ * @property {string} email - The email address.
+ * @property {string} phone - The phone number.
+ * @property {string} address - The address.
+ * @property {string} website - The website URL.
+ * @property {string} company - The company name.
+ * @property {null} photoFile - The photo file (null by default).
+ * @property {string} summary - The summary.
+ * @property {string} facebook - The Facebook profile URL.
+ * @property {string} instagram - The Instagram profile URL.
+ * @property {string} linkedin - The LinkedIn profile URL.
+ * @property {string} twitter - The Twitter profile URL.
+ * @property {string} pinterest - The Pinterest profile URL.
+ * @property {string} youtube - The YouTube channel URL.
+ * @property {string} reddit - The Reddit profile URL.
+ * @property {string} tiktok - The TikTok profile URL.
+ * @property {string} skype - The Skype username.
+ * @property {string} twitch - The Twitch profile URL.
+ * @property {string} github - The GitHub profile URL.
+ * @property {string} shopify - The Shopify store URL.
+ * @property {string} etsy - The Etsy store URL.
+ * @property {string} amazon - The Amazon store URL.
+ * @property {string} snapchat - The Snapchat profile URL.
+ * @property {string} ubereats - The Uber Eats profile URL.
+ * @property {string} logo - The logo image URL.
  */
 const initialFormData = {
     firstName: "",
@@ -60,6 +93,7 @@ const initialFormData = {
  * utilizando una fórmula que compara la luminosidad del color con un umbral (0.5) para decidir
  * si el color de contraste adecuado es blanco para colores oscuros o negro para colores claros. 
  */
+
 function getContrastColor(hexColor) {
     // Convertir el color hexadecimal a RGB.
     const r = parseInt(hexColor.substr(1, 2), 16);
@@ -107,12 +141,11 @@ function Card() {
     };
 
     /**
-     * 
-     * @param {*} file 
-     * @returns 
+     * @param {*} file
+     * @return {*} 
      * Función que toma un objeto File como entrada y devuelve una 
      * promesa que es una cadena de texto que representa la URL del objeto File para que pueda ser leida.
-    */
+     */
     const getObjectUrl = (file) => {
         return new Promise((resolve, reject) => {
             const reader = new FileReader();
@@ -123,10 +156,11 @@ function Card() {
     }
 
     /**
+     * @param {*} event
      * Función que verifica si es imagen y si lo es crea un objeto FileReader para leer el 
      * archivo, se actualiza el estado del formData con el archivo seleccionado, convirtiéndolo 
      * en una URL base64.
-     **/
+     */
     const handlePhotoChange = (event) => {
         const file = event.target.files[0];
         const reader = new FileReader();
@@ -150,7 +184,6 @@ function Card() {
      * utilizando la función URL.createObjectURL(). De lo contrario, se asigna una cadena vacía.
      * La función URL.createObjectURL() crea una URL de objeto para el archivo especificado.
      */
-
     const photoDataURL = formData.photoFile
         ? URL.createObjectURL(formData.photoFile)
         : '';
@@ -245,6 +278,7 @@ function Card() {
     /**
     *  Constante que recoge las redes sociales 
     */
+
     const [showUsername, setShowUsername] = useState({
         facebook: false,
         instagram: false,
@@ -256,21 +290,24 @@ function Card() {
         skype: false,
         tiktok: false,
         twitch: false,
-
-
     });
+
     /**
-    *  Función que se encarga de abrir el input de la red social clicada para añadir el perfil 
-    */
+     * @param {*} socialNetwork
+     * @param {boolean} [showField=true]
+     *Función que se encarga de abrir el input de la red social clicada para añadir el perfil 
+     */
     const handleIconClick = (socialNetwork, showField = true) => {
         setShowUsername(prevState => ({
             ...prevState,
             [socialNetwork]: showField
         }));
     };
+
     /**
-    *  Función que se encarga quitar el input de la red social clicada 
-    */
+     *Función que se encarga quitar el input de la red social clicada 
+     * @param {*} socialNetwork
+     */
     const handleRemoveClick = (socialNetwork) => {
         setShowUsername(prevState => ({
             ...prevState,
@@ -295,6 +332,7 @@ function Card() {
     return (
         <div>
             <Header></Header>
+            
             <div className='container-card'>
                 <div style={{ marginLeft: 20, marginBottom: '1rem', position: 'relative' }}>
                     <h2 style={{ fontFamily: 'Poppins', fontWeight: 500, fontSize: '2rem', letterSpacing: '0.5px' }}>

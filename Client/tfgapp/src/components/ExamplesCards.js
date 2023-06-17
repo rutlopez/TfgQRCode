@@ -1,3 +1,9 @@
+/**
+ * @fileoverview Sección de ejemplos de tarjetas
+ * @version 1.0
+ * @author Rut Yela
+ * @copyright rut.yela.lopez@gmail.com
+ */
 import React, { useEffect } from 'react';
 import previa1 from '../assets/img/example-cards/previa1.png';
 import previa2 from '../assets/img/example-cards/previa2.png';
@@ -19,7 +25,6 @@ function ExamplesCards() {
 
   return (
     <>
-     {/* Sección de tarjetas de ejemplo (example cards)*/}
       <section className='examples' id='examples'>
         <div className='container-examples'>
           <div

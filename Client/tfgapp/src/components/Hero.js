@@ -1,10 +1,15 @@
+/**
+ * @fileoverview creación de la sección primera del Home (hero)
+ * @version 1.0
+ * @author Rut Yela
+ * @copyright rut.yela.lopez@gmail.com
+ */
 import React, { useEffect } from 'react';
 import heroImg from '../assets/img/hero.jpg'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-/* Sección primera del Home (hero)*/
 function Hero() {
 
     /**

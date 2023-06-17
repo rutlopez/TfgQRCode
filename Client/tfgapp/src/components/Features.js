@@ -1,3 +1,9 @@
+/**
+ * @fileoverview Creación de la sección de características (features)
+ * @version 1.0
+ * @author Rut Yela
+ * @copyright rut.yela.lopez@gmail.com
+ */
 import React, { useEffect } from "react";
 import { BsFillBookmarkStarFill } from 'react-icons/bs';
 import Feature from './Feature';
@@ -6,12 +12,10 @@ import featureImg from '../assets/img/features/moviles.png'
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-/* Sección de características (features) */
 function Features() {
-
     /**
-     * Efectos visuales 
-   */
+     *Efectos visuales 
+    */
     useEffect(() => {
         AOS.init({
             duration: 2000,
@@ -39,9 +43,10 @@ function Features() {
                     <div className='features-right' data-aos="fade-left">
                         {
                             featureList.map((feature) => (
-                                <Feature key={feature.id} icon={feature.icon} heading={feature.heading} text={feature.text} />))
+                                <Feature key={feature.id} icon={feature.icon} heading={feature.heading} text={feature.text}
+                                />
+                            ))
                         }
-
                     </div>
                 </div>
             </div>

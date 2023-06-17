@@ -1,13 +1,17 @@
+/**
+ * @fileoverview Creación del navbar superior
+ * @version 1.0
+ * @author Rut Yela
+ * @copyright rut.yela.lopez@gmail.com
+ */
 import React from 'react';
-import styles from '../styles/HeaderStyles.css';
 import logo from "../assets/img/logo.png";
 import { FaHome, FaPlusCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-/* Navbar */
 function NavBar() {
   return (
-    <header style={styles.header}>
+    <header>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <img src={logo} alt="Logo" style={{ marginLeft: 25 }} />
         <nav className='nav1'>

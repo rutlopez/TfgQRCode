@@ -1,3 +1,10 @@
+/**
+ * @fileoverview Navbar inferior (donde están las distintas secciones del home, donde cliques a una de ellas 
+ * y te desplace a esa sección).
+ * @version 1.0
+ * @author Rut Yela
+ * @copyright rut.yela.lopez@gmail.com
+ */
 import React from "react";
 import { AiOutlineHome, AiOutlineQuestionCircle } from "react-icons/ai";
 import { BsFillBookmarkStarFill } from 'react-icons/bs';
@@ -5,7 +12,6 @@ import { FaArrowRight } from 'react-icons/fa';
 import { IoIdCard } from 'react-icons/io5';
 import { useState } from "react";
 
-/* Navbar de abajo, donde están las distintas secciones del home para clicar */
 const Navbar2 = () => {
     const [activeNav, setActiveNav] = useState("#");
 

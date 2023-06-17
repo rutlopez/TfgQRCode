@@ -1,10 +1,13 @@
+/**
+ * @fileoverview Exporta la constante featureList que contiene la lista de características.
+ * @version 1.0
+ * @author Rut Yela
+ * @copyright rut.yela.lopez@gmail.com
+ */
 import { FaBolt, FaQrcode } from 'react-icons/fa';
 import { FiEdit } from 'react-icons/fi';
 import { AiOutlineShareAlt } from 'react-icons/ai';
 
-/**
- * Clase con la lista de Features (caracteristicas) de la página Home
-*/
 export const featureList = [
     {
         id: 1,

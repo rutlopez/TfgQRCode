@@ -1,5 +1,11 @@
+/**
+ * @fileoverview Sección de la curva amarilla del Home (Promotion)
+ * @version 1.0
+ * @author Rut Yela
+ * @copyright rut.yela.lopez@gmail.com
+ */
 import React from 'react';
-/* Sección de la curva amarilla de abajo del Home (Promotion)*/
+/* */
 const Promotion = () => {
   return (
     <div

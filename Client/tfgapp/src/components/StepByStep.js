@@ -1,3 +1,9 @@
+/**
+ * @fileoverview creación de tabla de datos y la sección llamada paso a paso  
+ * @version 1.0
+ * @author Rut Yela
+ * @copyright rut.yela.lopez@gmail.com
+ */
 import React, { useEffect } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import step1 from '../assets/img/stepbystep/step1.png';
@@ -8,15 +14,11 @@ import step5 from '../assets/img/stepbystep/step5.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-/* Sección de paso a paso del Home */
 const StepByStep = () => {
 
   useEffect(() => {
   }, []);
 
-  /**
-   * Array con los pasos del proceso y sus descripciones
-   */
   const steps = [
     {
       title: 'Step 1: Fill in your information',
